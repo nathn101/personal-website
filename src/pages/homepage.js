@@ -3,6 +3,12 @@ import { TypeAnimation } from 'react-type-animation';
 import { preloadImages } from '../utils.js';
 import { Card1 } from '../components/card.js';
 import { Splitting } from 'splitting';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FaPython, FaHtml5, FaCss3Alt, FaReact, FaJs } from "react-icons/fa";
+import { SiJupyter, SiPandas, SiNumpy, SiScikitlearn, SiGooglecloud } from "react-icons/si";
+import { RiOpenaiFill } from "react-icons/ri";
+import ReactTooltip from 'react-tooltip';
+
 
 import './homepage.scss';
 const Home = () => {
@@ -131,65 +137,169 @@ const Home = () => {
                     <img src={ require('../assets/imgs/downArrowIcon.png')}></img>
                     <div className="grid" data-effect="hover-1">
                         <div className="project">
-                            <div className="card card--alt">
-                                <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/stock-market.jpg')})`}}></div>
-                                <div className="card__box card__box--a">
-                                    <span className="card__box-number">01</span>
-                                    <span className="card__box-tags project-name">Python Roboadvisor</span>
+                            <a href="https://github.com/nathn101/Python-Roboadvisor">
+                                <div className="card card--alt">
+                                    <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/stock-market.jpg')})`}}></div>
+                                    <div className="card__box card__box--a">
+                                        <span className="card__box-number">01</span>
+                                        <span className="card__box-tags project-name">Python Roboadvisor</span>
+                                    </div>
+                                    <div className="card__box card__box--d">
+                                        <span className="card__box-category project-description">
+                                            A roboadvisor that generates an optimized portfolio from a given list of stocks for clients with low-risk tolerance
+                                            <span></span>
+                                        </span>
+                                    </div>
                                 </div>
-                                <div className="card__box card__box--d">
-                                    <span className="card__box-category project-description">
-                                        A roboadvisor that generates an optimized portfolio from a given list of stocks for clients with low-risk tolerance
-                                        <span></span>
-                                    </span>
+                            </a>
+                            <div className="project-brief">
+                                <h1>Portfolio Generator</h1>
+                                <div className="project-brief-tech">
+                                    <div className="project-brief-tech-python">
+                                        <FaPython />
+                                        <span>Python</span>
+                                    </div>
+                                    <div className="project-brief-tech-jupyter">
+                                        <SiJupyter />
+                                        <span>Jupyter</span>
+                                    </div>
+                                    <div className="project-brief-tech-pandas">
+                                        <SiPandas />
+                                        <span>Pandas</span>
+                                    </div>
+                                    <div className="project-brief-tech-numpy">
+                                        <SiNumpy />
+                                        <span>Numpy</span>
+                                    </div>
                                 </div>
                             </div>
-                            <h1>Portfolio Generator</h1>
                         </div>
                         <div className="project">
-                            <div className="card card--alt">
-                                <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/spotify-website.png')})`}}></div>
-                                <div className="card__box card__box--a">
-                                    <span className="card__box-number">02</span>
-                                    <span className="card__box-tags project-name">Spotify Matchmaker</span>
+                            <a href="https://github.com/nathn101/spot-match">
+                                <div className="card card--alt">
+                                    <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/spotify-website.png')})`}}></div>
+                                    <div className="card__box card__box--a">
+                                        <span className="card__box-number">02</span>
+                                        <span className="card__box-tags project-name">Spotify Matchmaker</span>
+                                    </div>
+                                    <div className="card__box card__box--d">
+                                        <span className="card__box-category project-description">
+                                            A matchmaking application that uses machine learning to match people based on their Spotify listening profiles
+                                        </span>
+                                    </div>
                                 </div>
-                                <div className="card__box card__box--d">
-                                    <span className="card__box-category project-description">
-                                        A matchmaking application that uses machine learning to match people based on their Spotify listening profiles
-                                    </span>
+                            </a>
+                            <div className="project-brief">
+                                <h1>Music Matchmaker</h1>
+                                <div className="project-brief-tech">
+                                    <div className="project-brief-tech-html">
+                                        <FaHtml5 />
+                                        <span>HTML</span>
+                                    </div>
+                                    <div className="project-brief-tech-css">
+                                        <FaCss3Alt />
+                                        <span>CSS</span>
+                                    </div>
+                                    <div className="project-brief-tech-js">
+                                        <FaJs />
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <div className="project-brief-tech-react">
+                                        <FaReact />
+                                        <span>React</span>
+                                    </div>
+                                    <div className="project-brief-tech-python">
+                                        <FaPython />
+                                        <span>Python</span>
+                                    </div>
                                 </div>
                             </div>
-                            <h1>Music Matchmaker</h1>
                         </div>
                         <div className="project">
-                            <div className="card card--alt">
-                                <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/notes.png')})`}}></div>
-                                <div className="card__box card__box--a">
-                                    <span className="card__box-number">03</span>
-                                    <span className="card__box-tags project-name">Tag-Team</span>
+                            <a href="https://github.com/nathn101/ml-note-app">
+                                <div className="card card--alt">
+                                    <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/notes.png')})`}}></div>
+                                    <div className="card__box card__box--a">
+                                        <span className="card__box-number">03</span>
+                                        <span className="card__box-tags project-name">Tag-Team</span>
+                                    </div>
+                                    <div className="card__box card__box--d">
+                                        <span className="card__box-category project-description">
+                                            A note-sharing application that allows users to scan documents and easily share them among a group of people
+                                        </span>
+                                    </div>
                                 </div>
-                                <div className="card__box card__box--d">
-                                    <span className="card__box-category project-description">
-                                        A note-sharing application that allows users to scan documents and easily share them among a group of people
-                                    </span>
+                            </a>
+                            <div className="project-brief">
+                                <h1>Note-Sharing</h1>
+                                <div className="project-brief-tech">
+                                    <div className="project-brief-tech-html">
+                                        <FaHtml5 />
+                                        <span>HTML</span>
+                                    </div>
+                                    <div className="project-brief-tech-css">
+                                        <FaCss3Alt />
+                                        <span>CSS</span>
+                                    </div>
+                                    <div className="project-brief-tech-js">
+                                        <FaJs />
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <div className="project-brief-tech-react">
+                                        <FaReact />
+                                        <span>React</span>
+                                    </div>
+                                    <div className="project-brief-tech-googlecloud">
+                                        <SiGooglecloud />
+                                        <span>Google Cloud</span>
+                                    </div>
+                                    <div className="project-brief-tech-openai">
+                                        <RiOpenaiFill />
+                                        <span>OpenAI</span>
+                                    </div>
                                 </div>
                             </div>
-                            <h1>Note-Sharing</h1>
                         </div>
                         <div className="project">
-                            <div className="card card--alt">
-                                <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/ml-churney.jpeg')})`}}></div>
-                                <div className="card__box card__box--a">
-                                    <span className="card__box-number">04</span>
-                                    <span className="card__box-tags project-name">Our ML Churney</span>
+                            <a href="https://github.com/nathn101/DSC-Datathon">
+                                <div className="card card--alt">
+                                    <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/ml-churney.jpeg')})`}}></div>
+                                    <div className="card__box card__box--a">
+                                        <span className="card__box-number">04</span>
+                                        <span className="card__box-tags project-name">Our ML Churney</span>
+                                    </div>
+                                    <div className="card__box card__box--d">
+                                        <span className="card__box-category project-description">
+                                            A custom prediction model for Infinite Investment Systems which predicts whether or not customers will churn or not churn
+                                        </span>
+                                    </div>
                                 </div>
-                                <div className="card__box card__box--d">
-                                    <span className="card__box-category project-description">
-                                        A custom prediction model for Infinite Investment Systems which predicts whether or not customers will churn or not churn
-                                    </span>
+                            </a>
+                            <div className="project-brief">
+                                <h1>Churn Prediction</h1>
+                                <div className="project-brief-tech">
+                                    <div className="project-brief-tech-python">
+                                        <FaPython />
+                                        <span>Python</span>
+                                    </div>
+                                    <div className="project-brief-tech-jupyter">
+                                        <SiJupyter />
+                                        <span>Jupyter</span>
+                                    </div>
+                                    <div className="project-brief-tech-pandas">
+                                        <SiPandas />
+                                        <span>Pandas</span>
+                                    </div>
+                                    <div className="project-brief-tech-numpy">
+                                        <SiNumpy />
+                                        <span>Numpy</span>
+                                    </div>
+                                    <div className="project-brief-tech-scikit">
+                                        <SiScikitlearn />
+                                        <span>Scikit-learn</span>
+                                    </div>
                                 </div>
                             </div>
-                            <h1>Churn Prediction</h1>
                         </div>
                     </div>
                 </div>
