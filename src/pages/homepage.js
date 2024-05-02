@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FaPython, FaHtml5, FaCss3Alt, FaReact, FaJs } from "react-icons/fa";
 import { SiJupyter, SiPandas, SiNumpy, SiScikitlearn, SiGooglecloud } from "react-icons/si";
 import { RiOpenaiFill } from "react-icons/ri";
+import { IoOpenOutline } from "react-icons/io5";
 import ReactTooltip from 'react-tooltip';
 
 
@@ -118,7 +119,7 @@ const Home = () => {
                             <hr/>
                             <h4>May 2023 - Aug 2023</h4>
                         </div>
-                        <div className="work-role"><h3>Azure Artifical Intelligence for Fiancial Advising</h3></div>
+                        <div className="work-role"><h3>Azure Artifical Intelligence for Financial Advising</h3></div>
                         <div className="work-details">
                             <ul>
                                 <li><p>Prototyped an intuitive and interactive financial advising chatbot with Azure AI services, to help open up investment options to the 77% of Canadians that own investments.</p></li>
@@ -127,6 +128,11 @@ const Home = () => {
                             </ul>
                         </div>
                     </div>
+                    <a href="https://drive.google.com/file/d/1VFCrwBYR7gYGkXkRjBRwZPQRys0t_ph9/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                        <button className="btn-shine">
+                            <span>Resume</span>
+                        </button>
+                    </a>
                 </div>
             </div>
 
@@ -137,7 +143,7 @@ const Home = () => {
                     <img src={ require('../assets/imgs/downArrowIcon.png')}></img>
                     <div className="grid" data-effect="hover-1">
                         <div className="project">
-                            <a href="https://github.com/nathn101/Python-Roboadvisor">
+                            <a href="https://github.com/nathn101/Python-Roboadvisor" target="_blank" rel="noopener noreferrer">
                                 <div className="card card--alt">
                                     <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/stock-market.jpg')})`}}></div>
                                     <div className="card__box card__box--a">
@@ -172,10 +178,11 @@ const Home = () => {
                                         <span>Numpy</span>
                                     </div>
                                 </div>
+                                <span><a href="https://github.com/nathn101/Python-Roboadvisor" className="open-icon" target="_blank" rel="noopener noreferrer"><IoOpenOutline /></a></span>
                             </div>
                         </div>
                         <div className="project">
-                            <a href="https://github.com/nathn101/spot-match">
+                            <a href="https://github.com/nathn101/spot-match" target="_blank" rel="noopener noreferrer">
                                 <div className="card card--alt">
                                     <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/spotify-website.png')})`}}></div>
                                     <div className="card__box card__box--a">
@@ -212,11 +219,24 @@ const Home = () => {
                                         <FaPython />
                                         <span>Python</span>
                                     </div>
+                                    <div className="project-brief-tech-pandas">
+                                        <SiPandas />
+                                        <span>Pandas</span>
+                                    </div>
+                                    <div className="project-brief-tech-numpy">
+                                        <SiNumpy />
+                                        <span>Numpy</span>
+                                    </div>
+                                    <div className="project-brief-tech-scikit">
+                                        <SiScikitlearn />
+                                        <span>Scikit-learn</span>
+                                    </div>
                                 </div>
+                                <span><a href="https://github.com/nathn101/spot-match" className="open-icon" target="_blank" rel="noopener noreferrer"><IoOpenOutline /></a></span>
                             </div>
                         </div>
                         <div className="project">
-                            <a href="https://github.com/nathn101/ml-note-app">
+                            <a href="https://github.com/nathn101/ml-note-app" target="_blank" rel="noopener noreferrer">
                                 <div className="card card--alt">
                                     <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/notes.png')})`}}></div>
                                     <div className="card__box card__box--a">
@@ -258,10 +278,11 @@ const Home = () => {
                                         <span>OpenAI</span>
                                     </div>
                                 </div>
+                                <span><a href="https://github.com/nathn101/ml-note-app" className="open-icon" target="_blank" rel="noopener noreferrer"><IoOpenOutline /></a></span>
                             </div>
                         </div>
                         <div className="project">
-                            <a href="https://github.com/nathn101/DSC-Datathon">
+                            <a href="https://github.com/nathn101/DSC-Datathon" target="_blank" rel="noopener noreferrer">
                                 <div className="card card--alt">
                                     <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/ml-churney.jpeg')})`}}></div>
                                     <div className="card__box card__box--a">
@@ -299,6 +320,7 @@ const Home = () => {
                                         <span>Scikit-learn</span>
                                     </div>
                                 </div>
+                                <span><a href="https://github.com/nathn101/DSC-Datathon" className="open-icon" target="_blank" rel="noopener noreferrer"><IoOpenOutline /></a></span>
                             </div>
                         </div>
                     </div>
@@ -311,22 +333,22 @@ const Home = () => {
                     <h3>Feel free to reach out to me on any one of these platforms!</h3>
                 </div>
                 <div className="connect-pics">
-                    <a href='https://www.linkedin.com/in/nc101/'>
+                    <a href='https://www.linkedin.com/in/nc101/' target="_blank" rel="noopener noreferrer">
                         <img src={require('../assets/imgs/linkedin_logo.png')}></img>
                     </a>
-                    <a href='https://github.com/nathn101'>
+                    <a href='https://github.com/nathn101' target="_blank" rel="noopener noreferrer">
                         <img src={require('../assets/imgs/github_logo.png')}></img>
                     </a>
-                    <a href='https://www.instagram.com/nathn0_0/'>
+                    <a href='https://www.instagram.com/nathn0_0/' target="_blank" rel="noopener noreferrer">
                         <img src={require('../assets/imgs/instagram_logo.png')}></img>
                     </a>
-                    <a href='https://open.spotify.com/user/22i32facrqjg2lfp2ehn4bc7i?si=20aa642f9e5c45f1'>
+                    <a href='https://open.spotify.com/user/22i32facrqjg2lfp2ehn4bc7i?si=20aa642f9e5c45f1' target="_blank" rel="noopener noreferrer">
                         <img src={require('../assets/imgs/spotify_logo.png')}></img>
                     </a>
                 </div>
             </div>
             <div className="footer">
-                <h3>© 2024 ✍️ Designed and 💻Built by Nathan Chu 😎</h3>
+                <h3>NC © 2024</h3>
             </div>
         </div>
     );
