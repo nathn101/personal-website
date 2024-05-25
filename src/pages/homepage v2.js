@@ -4,7 +4,7 @@ import { preloadImages } from '../utils.js';
 import { Card1 } from '../components/card.js';
 import { Splitting } from 'splitting';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FaPython, FaHtml5, FaCss3Alt, FaReact, FaJs, FaGithub, FaLinkedin, FaDiscord, FaSpotify } from "react-icons/fa";
+import { FaPython, FaHtml5, FaCss3Alt, FaReact, FaJs, FaGithub, FaLinkedin, FaDiscord, FaSpotify, FaFile } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { SiJupyter, SiPandas, SiNumpy, SiScikitlearn, SiGooglecloud } from "react-icons/si";
 import { RiOpenaiFill } from "react-icons/ri";
@@ -12,30 +12,8 @@ import { IoOpenOutline } from "react-icons/io5";
 import ReactTooltip from 'react-tooltip';
 
 
-import './homepage.scss';
-const Home = () => {
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (entry.target.classList.contains('about-details')) {
-                        entry.target.classList.add('about-details-animation');
-                    } else if (entry.target.classList.contains('about-pics')) {
-                        entry.target.classList.add('about-pics-animation');
-                    }
-                    return;
-                }
-                if (entry.target.classList.contains('about-details-animation')) {
-                    entry.target.classList.remove('about-details-animation');
-                } else if (entry.target.classList.contains('about-pics-animation')) {
-                    entry.target.classList.remove('about-pics-animation');
-                }
-            });
-        });
-        observer.observe(document.querySelector('.about-details'));
-        observer.observe(document.querySelector('.grid, .about-pics'));
-    });
+import './homepage v2.scss';
+const Homev2 = () => {
 
     useEffect(() => {
 
@@ -60,7 +38,8 @@ const Home = () => {
         <div id="home" className="home">
             <div className="hero">
                 <div className="hero-text">
-                    <h1>Hi, I'm Nathan<br/>{" "}
+                    <h2>Hi, I'm Nathan<br/></h2>
+                    <h1>{" "}
                     <TypeAnimation 
                     sequence={[
                         "a Software Developer", 1500,
@@ -72,14 +51,73 @@ const Home = () => {
                     speed={250}
                     deletionSpeed={175}
                     repeat={Infinity}/></h1>
-                    <h2>Computer Science and Finance Student <br/> @ University of Waterloo</h2>
+                    <h3>Computer Science and Finance Student <br/> @ University of Waterloo</h3>
                 </div>
-                <div className="hero-img">
+                <div className="hero-links">
+                    <span className="hero-link">
+                        <FaGithub/>
+                        <a href="https://github.com/nathn101" target="_blank" rel="noopener noreferrer">Github</a>
+                        <span class="arrow first">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                            </svg>
+                        </span>
+                        <span class="arrow second">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                            </svg>
+                        </span>
+                        <span class="arrow third">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                            </svg>
+                        </span>
+                    </span>
+                    <span className="hero-link">
+                        <FaLinkedin/>
+                        <a href="https://www.linkedin.com/in/nc101/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <span class="arrow first">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                            </svg>
+                        </span>
+                        <span class="arrow second">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                            </svg>
+                        </span>
+                        <span class="arrow third">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                            </svg>
+                        </span>
+                    </span>
+                    <span className="hero-link">
+                        <FaFile/>
+                        <a href="https://drive.google.com/file/d/1dfIiR90f-bbYxgaJNmNZoFg8_SUaW8IE/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+                        <span class="arrow first">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                            </svg>
+                        </span>
+                        <span class="arrow second">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                            </svg>
+                        </span>
+                        <span class="arrow third">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                            </svg>
+                        </span>
+                    </span>
+                </div>
+                {/* <div className="hero-img">
                     <img src={require('../assets/imgs/headshot.jpg')}></img>
-                </div>
+                </div> */}
             </div>
             
-            <div id="experience" className="container">
+            {/* <div id="experience" className="container">
                 <div className="experience">
                     <h1>Experience</h1>
                     <div className="experience-details">
@@ -116,13 +154,12 @@ const Home = () => {
                         </button>
                     </a>
                 </div>
-            </div>
+            </div> */}
 
             <div id="projects" className="container">
                 <div className="projects">
-                    <h1>Here are some of the projects I've worked on!</h1>
-                    <p>Scroll down to see more</p>
-                    <img src={ require('../assets/imgs/downArrowIcon.png')}></img>
+                    <h1>My Projects</h1>
+                    <hr></hr>
                     <div className="grid" data-effect="hover-1">
                         <div className="project">
                             <div className="card card--alt">
@@ -301,7 +338,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div id="about" className="container">
+            {/* <div id="about" className="container">
                 <div className="about">
                     <div className="about-details">
                         <h1>About Me</h1>
@@ -331,7 +368,7 @@ const Home = () => {
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> */}
             
             <div id="connect" className="connect">
                 <h1>Contact</h1>
@@ -351,4 +388,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Homev2;
