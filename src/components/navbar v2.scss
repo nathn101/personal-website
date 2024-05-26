@@ -4,10 +4,10 @@ $font-family: 'open-sans', sans-serif;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
-    position: fixed;
-    top: 0;
-    width: 100vw;
+    background-color: transparent;
+    position: absolute;
+    top: 1vh;
+    width: 100%;
     z-index: 9999;
 }
 
