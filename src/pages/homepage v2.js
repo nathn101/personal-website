@@ -6,7 +6,7 @@ import { Splitting } from 'splitting';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FaPython, FaHtml5, FaCss3Alt, FaReact, FaJs, FaGithub, FaLinkedin, FaDiscord, FaSpotify, FaFile } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
-import { SiJupyter, SiPandas, SiNumpy, SiScikitlearn, SiGooglecloud } from "react-icons/si";
+import { SiJupyter, SiPandas, SiNumpy, SiScikitlearn, SiGooglecloud, SiGooglegemini, SiFlask, SiDevpost } from "react-icons/si";
 import { RiOpenaiFill } from "react-icons/ri";
 import { IoOpenOutline } from "react-icons/io5";
 import ReactTooltip from 'react-tooltip';
@@ -224,7 +224,7 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                                 </div>
                                 <h1>Churn Prediction</h1>
                                 <span><a href="https://github.com/nathn101/DSC-Datathon" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
-                                <span><a href="https://devpost.com/software/our-ml-churney" target="_blank" rel="noopener noreferrer" className="open-icon"><p>Devpost</p><IoOpenOutline /></a></span>
+                                <span><a href="https://devpost.com/software/our-ml-churney" target="_blank" rel="noopener noreferrer" className="open-icon"><SiDevpost/><p>Devpost</p><IoOpenOutline /></a></span>
                                 <div className="project-brief-tech">
                                     <div className="project-brief-tech-python">
                                         <FaPython />
@@ -251,9 +251,117 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                         </div>
                         <div className="project">
                             <div className="card card--alt">
-                                <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/spotify-website.png')})`}}></div>
+                                <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/tag-team.png')})`}}></div>
                                 <div className="card__box card__box--a">
                                     <span className="card__box-number">03</span>
+                                    <span className="card__box-tags project-name">Tag-Team</span>
+                                </div>
+                                <div className="card__box card__box--d">
+                                    <span className="card__box-category project-description">
+                                        A note-sharing application that allows users to scan documents and easily share them among a group of people
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="project-brief">
+                                <div className="project-brief-topics">
+                                    <p>Web Dev</p>
+                                    <p>Natural Language Processing</p>
+                                    <p>Computer Vision</p>
+                                </div>
+                                <h1>Note-Sharing</h1>
+                                <span><a href="https://github.com/nathn101/ml-note-app" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
+                                <span><a href="https://devpost.com/software/tagteam-c7o4pz" target="_blank" rel="noopener noreferrer" className="open-icon"><SiDevpost/><p>Devpost</p><IoOpenOutline /></a></span>
+                                <div className="project-brief-tech">
+                                    <div className="project-brief-tech-html">
+                                        <FaHtml5 />
+                                        <span>HTML</span>
+                                    </div>
+                                    <div className="project-brief-tech-css">
+                                        <FaCss3Alt />
+                                        <span>CSS</span>
+                                    </div>
+                                    <div className="project-brief-tech-js">
+                                        <FaJs />
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <div className="project-brief-tech-react">
+                                        <FaReact />
+                                        <span>React</span>
+                                    </div>
+                                    <div className="project-brief-tech-googlecloud">
+                                        <SiGooglecloud />
+                                        <span>Google Cloud</span>
+                                    </div>
+                                    <div className="project-brief-tech-openai">
+                                        <RiOpenaiFill />
+                                        <span>OpenAI</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="project">
+                            <div className="card card--alt">
+                                <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/woke-cropped.png')})`}}></div>
+                                <div className="card__box card__box--a">
+                                    <span className="card__box-number">04</span>
+                                    <span className="card__box-tags project-name">WOKE</span>
+                                </div>
+                                <div className="card__box card__box--d">
+                                    <span className="card__box-category project-description">
+                                        A secure video-calling service equipped with AI capabililties to detect instances of deepfake impersonation.
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="project-brief">
+                                <div className="project-brief-topics">
+                                    <p>AI</p>
+                                    <p>Web Dev</p>
+                                    <p>Computer Vision</p>
+                                </div>
+                                <h1>Deepfake Detection</h1>
+                                <span><a href="https://github.com/nathn101/spot-match" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
+                                <span><a href="https://devpost.com/software/woke-ocjzmr" target="_blank" rel="noopener noreferrer" className="open-icon"><SiDevpost/><p>Devpost</p><IoOpenOutline /></a></span>
+                                <div className="project-brief-tech">
+                                    <div className="project-brief-tech-html">
+                                        <FaHtml5 />
+                                        <span>HTML</span>
+                                    </div>
+                                    <div className="project-brief-tech-css">
+                                        <FaCss3Alt />
+                                        <span>CSS</span>
+                                    </div>
+                                    <div className="project-brief-tech-js">
+                                        <FaJs />
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <div className="project-brief-tech-react">
+                                        <FaReact />
+                                        <span>React</span>
+                                    </div>
+                                    <div className="project-brief-tech-python">
+                                        <FaPython />
+                                        <span>Python</span>
+                                    </div>
+                                    <div className="project-brief-tech-googlecloud">
+                                        <SiGooglecloud />
+                                        <span>Google Cloud</span>
+                                    </div>
+                                    <div className="project-brief-tech-googlegemini">
+                                        <SiGooglegemini />
+                                        <span>Google Gemini</span>
+                                    </div>
+                                    <div className="project-brief-tech-flask">
+                                        <SiFlask />
+                                        <span>Flask</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="project">
+                            <div className="card card--alt">
+                                <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/spotify-website.png')})`}}></div>
+                                <div className="card__box card__box--a">
+                                    <span className="card__box-number">05</span>
                                     <span className="card__box-tags project-name">Spotify Matchmaker</span>
                                 </div>
                                 <div className="card__box card__box--d">
@@ -305,56 +413,6 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                                 </div>
                             </div>
                         </div>
-                        <div className="project">
-                            <div className="card card--alt">
-                                <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/notes.png')})`}}></div>
-                                <div className="card__box card__box--a">
-                                    <span className="card__box-number">04</span>
-                                    <span className="card__box-tags project-name">Tag-Team</span>
-                                </div>
-                                <div className="card__box card__box--d">
-                                    <span className="card__box-category project-description">
-                                        A note-sharing application that allows users to scan documents and easily share them among a group of people
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="project-brief">
-                                <div className="project-brief-topics">
-                                    <p>Web Dev</p>
-                                    <p>Natural Language Processing</p>
-                                    <p>Computer Vision</p>
-                                </div>
-                                <h1>Note-Sharing</h1>
-                                <span><a href="https://github.com/nathn101/ml-note-app" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
-                                <span><a href="https://devpost.com/software/tagteam-c7o4pz" target="_blank" rel="noopener noreferrer" className="open-icon"><p>Devpost</p><IoOpenOutline /></a></span>
-                                <div className="project-brief-tech">
-                                    <div className="project-brief-tech-html">
-                                        <FaHtml5 />
-                                        <span>HTML</span>
-                                    </div>
-                                    <div className="project-brief-tech-css">
-                                        <FaCss3Alt />
-                                        <span>CSS</span>
-                                    </div>
-                                    <div className="project-brief-tech-js">
-                                        <FaJs />
-                                        <span>JavaScript</span>
-                                    </div>
-                                    <div className="project-brief-tech-react">
-                                        <FaReact />
-                                        <span>React</span>
-                                    </div>
-                                    <div className="project-brief-tech-googlecloud">
-                                        <SiGooglecloud />
-                                        <span>Google Cloud</span>
-                                    </div>
-                                    <div className="project-brief-tech-openai">
-                                        <RiOpenaiFill />
-                                        <span>OpenAI</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>) : null}
@@ -364,25 +422,25 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                     <h1>About</h1>
                     <hr></hr>
                     <div className="about-details">
-                        
                         <ul>
                             <li><p>I am a second year student studying Computing and Financial Management at the University of Waterloo. A double major in Computer Science and Financial Management. With a passion for leveraging technology to drive financial innovation, I bring a unique blend of academic excellence and practical experience to the table.</p></li>
-                            <li><p>I am currently working as a Data Analyst as part of the Corporate Analytics and Special Projects team at the Privy Council Office - a department of the Federal Government of Canada.</p></li>
+                            <li><p>I spent my previous work term working as a Data Analyst as part of the Corporate Analytics and Special Projects team at the Privy Council Office - a department of the Federal Government of Canada. I used tools such as Tableau and PowerBI to provide insightful analytics into company metrics, improving employment equity, foreign and defence policy, as well as security and intelligence. I also spearheaded the migration of on-premises data to a data lakehouse on Microsoft Fabric.</p></li>
                             <li><p>Driven by a keen interest in machine learning, data science, and web development, I am particularly drawn to the dynamic field of fintech. Recognizing the transformative potential of technology in reshaping financial services, I am eager to contribute my skills and knowledge towards driving innovation in this rapidly evolving sector.</p></li>
                             <li><p>Outside of work and academics, I enjoy playing badminton, chess, listening to music and playing the guitar.</p></li>
                         </ul>
                     </div>
-                    <div className="about-pics">
+                    {/* <div className="about-pics">
                         <img className="about-pics-first" src={require('../assets/imgs/uw_logo.jpg')}></img>
                         <img className="about-pics-second" src={require('../assets/imgs/pco_logo.jpg')}></img>
-                    </div>
+                    </div> */}
+                    <div className="about-blurb"><h1>Feel free to connect with me!</h1></div>
                     <div className="about-socials">
-                        {/* <a href='https://www.linkedin.com/in/nc101/' target="_blank" rel="noopener noreferrer">
+                        <a href='https://www.linkedin.com/in/nc101/' target="_blank" rel="noopener noreferrer">
                             <FaLinkedin />
                         </a>
                         <a href='https://github.com/nathn101' target="_blank" rel="noopener noreferrer">
                             <FaGithub />
-                        </a> */}
+                        </a>
                         <a href='https://www.instagram.com/nathn0_0/' target="_blank" rel="noopener noreferrer">
                             <FaSquareInstagram />
                         </a>
@@ -397,10 +455,9 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                 <h1>Contact</h1>
                 <hr></hr>
                 <div className="connect-details">
-                    <h3>For any questions or if you want to chat, please feel free to contact me!</h3>
-                    <h3>Discord: _nathn_</h3>
+                    <h3>For any questions or if you want to chat, please feel free to contact me through Discord: @_nathn_ or by email!</h3>
                     <button onClick={() => window.location="mailto:n4chu@uwaterloo.ca"} className="connect-details-btn">
-                        Send email
+                        Send email!
                         <div class="icon">
                             <svg
                             height="24"

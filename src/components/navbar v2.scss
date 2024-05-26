@@ -4,7 +4,7 @@ $font-family: 'open-sans', sans-serif;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: #000000;
+    background-color: black;
     position: fixed;
     top: 0;
     width: 100vw;
@@ -12,7 +12,6 @@ $font-family: 'open-sans', sans-serif;
 }
 
 .home-link  {
-    color: white;
     margin-left: 1vw;
     text-decoration: none;
     font-family: $font-family;
@@ -22,10 +21,6 @@ $font-family: 'open-sans', sans-serif;
 .home-link > img {
     width: clamp(20px, 50px, 50px);
     height: clamp(20px, 50px, 50px);
-}
-
-.icon {
-    color: white;
 }
 
 .links {
