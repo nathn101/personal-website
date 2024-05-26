@@ -33,19 +33,30 @@ a {
 .about {
     display: flex;
     flex-direction: column;
-    margin: 5vh 14vw;
-    width: 60vw;
+    width: 80vw;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.425);
-    border: 0.25vw solid rgba(255, 255, 255, 0.685);
-    border-radius: 1vw;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+
+    & > h1 {
+        position: relative;
+        text-align: left;
+        font-size: 4rem;
+        color: white;
+        width: 80vw;
+        margin: 0;
+    }
+
+    & > hr {
+        position: relative;
+        width: 80vw;
+        margin: 0;
+        border: 0.1rem solid white;
+    }
 
     &-details {
         display: flex;
         flex-wrap: wrap;
         position: relative;
-        margin-left: 2vw;
         flex-direction: column;
         align-items: left;
         font-size: 1.5rem;
@@ -106,7 +117,7 @@ a {
         font-size: 4rem;
         
         a {
-            color: black;
+            color: white;
             margin: 0 1vw;
         }
     }
@@ -134,10 +145,10 @@ a {
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-top: 20vh;
+    margin-top: -5vh;
     align-items: center;
     height: 35vh;
-    width: 60vw;
+    width: 80vw;
     color: #f2f2f2;
     // background-color: rgba(255, 255, 255, 0.425);
     // border: 0.25vw solid rgba(255, 255, 255, 0.685);
@@ -146,13 +157,79 @@ a {
     & > h1 {
         width: 100%;
         text-align: left;
+        font-size: 4rem;
+        margin: 0;
+    }
+
+    & > hr {
+        width: 100%;
+        border: 0.1rem solid white;
     }
 
     &-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
         font-weight: bold;
-        font-size: 1.25rem;
-        width: 100%;
+        font-size: 1.5rem;
+        overflow: wrap;
+        width: 30%;
+
+        &-btn {
+            background: white;
+            color: black;
+            font-family: inherit;
+            padding: 0.35em;
+            padding-left: 1.2em;
+            font-size: 17px;
+            font-weight: 500;
+            border-radius: 0.9em;
+            border: none;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            box-shadow: inset 0 0 1.6em -0.6em white;
+            overflow: hidden;
+            position: relative;
+            height: 2.8em;
+            padding-right: 3.3em;
+            margin-top: 2vh;
+            cursor: pointer;
+
+            .icon {
+                background: #26363b;
+                margin-left: 1em;
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 2.2em;
+                width: 2.2em;
+                border-radius: 0.7em;
+                box-shadow: 0.1em 0.1em 0.6em 0.2em #26363b;
+                right: 0.3em;
+                transition: all 0.3s;
+            }
+        }
+
+        &-btn:hover .icon {
+            width: calc(100% - 0.6em);
+        }
+
+        &-btn .icon svg {
+            width: 1.1em;
+            transition: transform 0.3s;
+            color: white;
+        }
+
+        &-btn:hover .icon svg {
+            transform: translateX(0.1em);
+        }
+
+        &-btn:active .icon {
+            transform: scale(0.95);
+        }
     }
 }
 
@@ -160,6 +237,7 @@ a {
     padding-top: 5vh;
     display: flex;
     flex-direction: column;
+    height: max-content;
 }
 
 .experience {
@@ -333,7 +411,7 @@ a {
 }
 
 .footer {
-    color: black;
+    color: white;
     font-size: 1.5rem;
     font-family: $font-family;
     font-weight: 100;
@@ -349,7 +427,7 @@ a {
     max-width: 100%;
     min-width: 95vw;
     height: 80vh;
-    background: radial-gradient(circle, rgba(44,70,81,1) 0%, rgba(69,98,111,1) 0%, rgba(44,70,81,1) 35%);
+    background: radial-gradient(circle, rgba(38,54,59,1) 0%, rgba(69,98,111,1) 0%, rgba(38,54,59,1) 35%);
 
     &-text {
         display: flex;
@@ -398,7 +476,7 @@ a {
         justify-content: center;
         margin: 0 1vw;
         padding: 0;
-        width: 80%;
+        width: 60%;
         min-height: 30vh;
 
         .hero-link {
@@ -483,12 +561,13 @@ a {
 .home {
     display: flex;
     flex-direction: column;
+    padding-bottom: 5vh;
     overflow-x: hidden;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
     max-width: 100vw;                
-    background: #2c4651;
+    background: #26363b;
     color: white;
 }
 
@@ -509,6 +588,7 @@ a {
     position: relative;
     margin: 0;
     padding: 0;
+    height: fit-content;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -516,18 +596,17 @@ a {
     color: black;
 
     .grid {
-        margin: 0;
+        margin: 5vh 0;
         display: grid;
-        position: relative;
         grid-auto-rows: auto;
         width: 60vw;
-        top: 15vh;
         grid-template-columns: repeat(2, 1fr);
         gap: 5.5rem;
         z-index: 200;
         color: var(--color-text-grid);
+        height: min-content;
 
-        @media (max-width: 1100px) {
+        @media (max-width: 1500px) {
             grid-template-columns: 1fr;
         }
 
@@ -585,6 +664,7 @@ a {
             
                     &--a {
                         grid-area: box-a;
+                        border-radius: 1vw 0 0 0;
                     }
             
                     &--d {
@@ -611,7 +691,7 @@ a {
                         grid-area: number;
                         text-decoration: underline;
                         text-decoration-thickness: 0.4rem;
-                        text-decoration-color: rgba(11, 247, 255, 0.853);
+                        text-decoration-color: white;
                         height: 60%;
                         margin: 1vh;
                     }
@@ -663,13 +743,13 @@ a {
                 padding: 0;
                 z-index: 2;
                 color: white;
-                background-color: #2c4651;
+                background-color: #26363b;
                 border-bottom-left-radius: 1vw;
                 border-bottom-right-radius: 1vw;
                 width: 100%;
 
                 h1 {
-                    margin: 1vh;
+                    margin-top: 0;
                     margin-bottom: 0.5vh;
                     margin-left: 1vw;
                     padding: 0;
@@ -677,6 +757,23 @@ a {
                     font-family: $font-family;
                     font-weight: 100;
                     text-align: center;
+                }
+                
+                &-topics {
+                    display: flex;
+                    flex-direction: row;
+                    position: relative;
+                    margin-left: 1vw;
+                    margin-bottom: 0;
+                    font-size: 1.2rem;
+                    gap: 0.2vw;
+                    color: black;
+
+                    p {
+                        border-radius: 9999px;
+                        background-color: white;
+                        padding: 0.8vh;
+                    }
                 }
 
                 &-tech {
@@ -687,17 +784,21 @@ a {
                     color:white;
                     font-size: 3rem;
                     margin-top: 1.5vh;
-                    margin-left: 1vw;
+                    margin-bottom: 1.5vh;
+                    margin-left: 0.5vw;
 
                     &-python, &-css, &-html, &-js, &-jupyter, &-react, &-pandas, &-numpy, &-scikit, &-googlecloud, &-openai {
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-                        margin: 0 0.2vw;
+                        margin: 0 0.4vw;
                     }
 
                     &-python > span, &-css > span, &-html > span, &-js > span, &-jupyter > span, &-react > span, &-pandas > span, &-numpy > span, &-scikit > span, &-googlecloud > span, &-openai > span {
-                        width: min-content;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        width: 30px;
                         overflow: wrap;
                         font-size: small;
                         font-weight: 600;
@@ -712,7 +813,7 @@ a {
                     &-python > span::before, &-css > span::before, &-html > span::before, &-js > span::before, &-jupyter > span::before, &-react > span::before, &-pandas > span::before, &-numpy > span::before, &-scikit > span::before, &-googlecloud > span::before, &-openai > span::before {
                         position: absolute;
                         content: "";
-                        width: 10px;
+                        width: 30px;
                         height: 10px;
                         border-radius: 3px;
                         background-color: inherit;
@@ -730,21 +831,30 @@ a {
                         }
                     }
                 }
-                
-                span {
-                    height: auto;
+
+                & > span {
                     display: flex;
                     flex-direction: row;
-                    justify-content: flex-end;
+                    justify-content: flex-start;
+                    padding-left: 1vw;
+                    align-items: center;
+                    font-size: 2rem;
                     width: 100%;
+                    
+                    a {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    p {
+                        margin: 0.5vw;
+                    }
                 }
 
                 .open-icon {
-                    margin-top: 0;
-                    margin-bottom: 1vh;
-                    margin-right: 1vw;
-                    color: rgba(11, 247, 255, 0.853);
-                    font-size: 2.5rem;
+                    color: white;
                     height: fit-content;
                 }
             }

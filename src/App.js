@@ -7,11 +7,16 @@ import Home from './pages/homepage v2';
 import './App.scss';
 
 function App() {
+
+  const [isProject, setIsProject] = useState(true);
+  const [isAbout, setIsAbout] = useState(false);
+  const [isConnect, setIsConnect] = useState(false);
+
   return (
     <>
-      <Navbar />
+      <Navbar setIsProject={setIsProject} setIsAbout={setIsAbout} setIsConnect={setIsConnect}/>
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Home isProject={isProject} setIsProject={setIsProject} isAbout={isAbout} setIsAbout={setIsAbout} isConnect={isConnect} setIsConnect={setIsConnect}/>} />
       </Routes>
     </>   
   );

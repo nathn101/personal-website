@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { preloadImages } from '../utils.js';
 import { Card1 } from '../components/card.js';
@@ -13,7 +13,7 @@ import ReactTooltip from 'react-tooltip';
 
 
 import './homepage v2.scss';
-const Homev2 = () => {
+const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIsConnect }) => {
 
     useEffect(() => {
 
@@ -33,7 +33,7 @@ const Homev2 = () => {
         preloadImages('.card__img');
 
     });
-    
+
     return (
         <div id="home" className="home">
             <div className="hero">
@@ -156,7 +156,7 @@ const Homev2 = () => {
                 </div>
             </div> */}
 
-            <div id="projects" className="container">
+            {isProject ? (<div id="projects" className="container">
                 <div className="projects">
                     <h1>My Projects</h1>
                     <hr></hr>
@@ -176,7 +176,13 @@ const Homev2 = () => {
                                 </div>
                             </div>
                             <div className="project-brief">
+                                <div className="project-brief-topics">
+                                    <p>Financial Modelling</p>
+                                    <p>Data Engineering</p>
+                                    <p>Data Visualization</p>
+                                </div>
                                 <h1>Portfolio Generator</h1>
+                                <span><a href="https://github.com/nathn101/Python-Roboadvisor" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
                                 <div className="project-brief-tech">
                                     <div className="project-brief-tech-python">
                                         <FaPython />
@@ -195,14 +201,13 @@ const Homev2 = () => {
                                         <span>Numpy</span>
                                     </div>
                                 </div>
-                                <span><a href="https://github.com/nathn101/Python-Roboadvisor" target="_blank" rel="noopener noreferrer" className="open-icon"><IoOpenOutline /></a></span>
                             </div>
                         </div>
                         <div className="project">
                             <div className="card card--alt">
                                 <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/ml-churney.jpeg')})`}}></div>
                                 <div className="card__box card__box--a">
-                                    <span className="card__box-number">04</span>
+                                    <span className="card__box-number">02</span>
                                     <span className="card__box-tags project-name">Our ML Churney</span>
                                 </div>
                                 <div className="card__box card__box--d">
@@ -212,7 +217,14 @@ const Homev2 = () => {
                                 </div>
                             </div>
                             <div className="project-brief">
+                                <div className="project-brief-topics">
+                                    <p>Machine Learning</p>
+                                    <p>Data Engineering</p>
+                                    <p>Data Visualization</p>
+                                </div>
                                 <h1>Churn Prediction</h1>
+                                <span><a href="https://github.com/nathn101/DSC-Datathon" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
+                                <span><a href="https://devpost.com/software/our-ml-churney" target="_blank" rel="noopener noreferrer" className="open-icon"><p>Devpost</p><IoOpenOutline /></a></span>
                                 <div className="project-brief-tech">
                                     <div className="project-brief-tech-python">
                                         <FaPython />
@@ -235,14 +247,13 @@ const Homev2 = () => {
                                         <span>Scikit-learn</span>
                                     </div>
                                 </div>
-                                <span><a href="https://github.com/nathn101/DSC-Datathon" target="_blank" rel="noopener noreferrer" className="open-icon"><IoOpenOutline /></a></span>
                             </div>
                         </div>
                         <div className="project">
                             <div className="card card--alt">
                                 <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/spotify-website.png')})`}}></div>
                                 <div className="card__box card__box--a">
-                                    <span className="card__box-number">02</span>
+                                    <span className="card__box-number">03</span>
                                     <span className="card__box-tags project-name">Spotify Matchmaker</span>
                                 </div>
                                 <div className="card__box card__box--d">
@@ -252,7 +263,12 @@ const Homev2 = () => {
                                 </div>
                             </div>
                             <div className="project-brief">
+                                <div className="project-brief-topics">
+                                    <p>Machine Learning</p>
+                                    <p>Web Dev</p>
+                                </div>
                                 <h1>Music Matchmaker</h1>
+                                <span><a href="https://github.com/nathn101/spot-match" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
                                 <div className="project-brief-tech">
                                     <div className="project-brief-tech-html">
                                         <FaHtml5 />
@@ -287,14 +303,13 @@ const Homev2 = () => {
                                         <span>Scikit-learn</span>
                                     </div>
                                 </div>
-                                <span><a href="https://github.com/nathn101/spot-match" target="_blank" rel="noopener noreferrer" className="open-icon"><IoOpenOutline /></a></span>
                             </div>
                         </div>
                         <div className="project">
                             <div className="card card--alt">
                                 <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/notes.png')})`}}></div>
                                 <div className="card__box card__box--a">
-                                    <span className="card__box-number">03</span>
+                                    <span className="card__box-number">04</span>
                                     <span className="card__box-tags project-name">Tag-Team</span>
                                 </div>
                                 <div className="card__box card__box--d">
@@ -304,7 +319,14 @@ const Homev2 = () => {
                                 </div>
                             </div>
                             <div className="project-brief">
+                                <div className="project-brief-topics">
+                                    <p>Web Dev</p>
+                                    <p>Natural Language Processing</p>
+                                    <p>Computer Vision</p>
+                                </div>
                                 <h1>Note-Sharing</h1>
+                                <span><a href="https://github.com/nathn101/ml-note-app" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
+                                <span><a href="https://devpost.com/software/tagteam-c7o4pz" target="_blank" rel="noopener noreferrer" className="open-icon"><p>Devpost</p><IoOpenOutline /></a></span>
                                 <div className="project-brief-tech">
                                     <div className="project-brief-tech-html">
                                         <FaHtml5 />
@@ -331,17 +353,18 @@ const Homev2 = () => {
                                         <span>OpenAI</span>
                                     </div>
                                 </div>
-                                <span><a href="https://github.com/nathn101/ml-note-app" target="_blank" rel="noopener noreferrer" className="open-icon"><IoOpenOutline /></a></span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>) : null}
 
-            {/* <div id="about" className="container">
+            {isAbout ? (<div id="about" className="container">
                 <div className="about">
+                    <h1>About</h1>
+                    <hr></hr>
                     <div className="about-details">
-                        <h1>About Me</h1>
+                        
                         <ul>
                             <li><p>I am a second year student studying Computing and Financial Management at the University of Waterloo. A double major in Computer Science and Financial Management. With a passion for leveraging technology to drive financial innovation, I bring a unique blend of academic excellence and practical experience to the table.</p></li>
                             <li><p>I am currently working as a Data Analyst as part of the Corporate Analytics and Special Projects team at the Privy Council Office - a department of the Federal Government of Canada.</p></li>
@@ -350,16 +373,16 @@ const Homev2 = () => {
                         </ul>
                     </div>
                     <div className="about-pics">
-                        <img src={require('../assets/imgs/uw_logo.jpg')}></img>
-                        <img src={require('../assets/imgs/pco_logo.jpg')}></img>
+                        <img className="about-pics-first" src={require('../assets/imgs/uw_logo.jpg')}></img>
+                        <img className="about-pics-second" src={require('../assets/imgs/pco_logo.jpg')}></img>
                     </div>
                     <div className="about-socials">
-                        <a href='https://www.linkedin.com/in/nc101/' target="_blank" rel="noopener noreferrer">
+                        {/* <a href='https://www.linkedin.com/in/nc101/' target="_blank" rel="noopener noreferrer">
                             <FaLinkedin />
                         </a>
                         <a href='https://github.com/nathn101' target="_blank" rel="noopener noreferrer">
                             <FaGithub />
-                        </a>
+                        </a> */}
                         <a href='https://www.instagram.com/nathn0_0/' target="_blank" rel="noopener noreferrer">
                             <FaSquareInstagram />
                         </a>
@@ -368,19 +391,33 @@ const Homev2 = () => {
                         </a>
                     </div>
                 </div>
-            </div> */}
+            </div>) : null}
             
-            <div id="connect" className="connect">
+            {isConnect ? (<div id="connect" className="connect">
                 <h1>Contact</h1>
+                <hr></hr>
                 <div className="connect-details">
-                    <h2>Let's connect!</h2>
-                    <h3>For any questions or if you want to just chat, please feel free to contact me!</h3>
+                    <h3>For any questions or if you want to chat, please feel free to contact me!</h3>
                     <h3>Discord: _nathn_</h3>
                     <button onClick={() => window.location="mailto:n4chu@uwaterloo.ca"} className="connect-details-btn">
                         Send email
+                        <div class="icon">
+                            <svg
+                            height="24"
+                            width="24"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            >
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path
+                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                fill="currentColor"
+                            ></path>
+                            </svg>
+                        </div>
                     </button>
                 </div>
-            </div>
+            </div>) : null}
             <div className="footer">
                 <h3>NC © 2024</h3>
             </div>
