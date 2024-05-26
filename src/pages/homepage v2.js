@@ -319,7 +319,7 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                                     <p>Computer Vision</p>
                                 </div>
                                 <h1>Deepfake Detection</h1>
-                                <span><a href="https://github.com/nathn101/spot-match" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
+                                <span><a href="https://github.com/nathn101/genesis" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
                                 <span><a href="https://devpost.com/software/woke-ocjzmr" target="_blank" rel="noopener noreferrer" className="open-icon"><SiDevpost/><p>Devpost</p><IoOpenOutline /></a></span>
                                 <div className="project-brief-tech">
                                     <div className="project-brief-tech-html">
