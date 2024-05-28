@@ -308,7 +308,7 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                                 </div>
                                 <div className="card__box card__box--d">
                                     <span className="card__box-category project-description">
-                                        A secure video-calling service equipped with AI capabililties to detect instances of deepfake impersonation.
+                                        A secure video-calling service equipped with AI capabililties to detect instances of deepfake impersonation
                                     </span>
                                 </div>
                             </div>

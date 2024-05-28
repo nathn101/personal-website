@@ -9,10 +9,10 @@ $font-family: 'open-sans', sans-serif;
         font-size: 0.45rem;
     }
     @media (max-width: 600px) {
-        font-size: 0.4rem;
+        font-size: 0.3rem;
     }
     @media (max-width: 400px) {
-        font-size: 0.35rem;
+        font-size: 0.2rem;
     }
 
     @media (max-height: 800px) {
@@ -730,7 +730,8 @@ a {
                         text-decoration: underline;
                         text-decoration-thickness: 0.4rem;
                         text-decoration-color: white;
-                        height: 60%;
+                        padding: 1vh;
+                        height: fit-content;
                         margin: 1vh;
                     }
             
@@ -738,9 +739,10 @@ a {
                         color: white;
                         grid-area: tags;
                         width: 90%;
-                        height: 45%;
-                        margin: 0 1vw;
-                        padding: 1vh;
+                        height: fit-content;
+                        margin-top: 1vh;
+                        margin-left: 1.5em;
+                        padding: 0;
                         font-size: 2.5rem;
                         text-wrap: wrap;
                     }
