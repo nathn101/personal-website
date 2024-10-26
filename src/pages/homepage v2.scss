@@ -1,31 +1,47 @@
 $font-family: 'open-sans', sans-serif;
 
 :root {
+    --font-size-base: 1rem;
+    --font-size-scale-small: 0.5;
+    --font-size-scale-medium: 0.45;
+    --font-size-scale-large: 0.3;
+    --font-size-scale-xlarge: 0.2;
+
+    --font-size-height-small: 0.5;
+    --font-size-height-medium: 0.4;
+    --font-size-height-large: 0.35;
+    --font-size-height-xlarge: 0.25;
+
     scroll-behavior: smooth;
+}
+
+:root {
+    scroll-behavior: smooth;
+
     @media (max-width: 1000px) {
-        font-size: 0.5rem;
+        font-size: calc(var(--font-size-base) * var(--font-size-scale-small));
     }
     @media (max-width: 800px) {
-        font-size: 0.45rem;
+        font-size: calc(var(--font-size-base) * var(--font-size-scale-medium));
     }
     @media (max-width: 600px) {
-        font-size: 0.3rem;
+        font-size: calc(var(--font-size-base) * var(--font-size-scale-large));
     }
     @media (max-width: 400px) {
-        font-size: 0.2rem;
+        font-size: calc(var(--font-size-base) * var(--font-size-scale-xlarge));
     }
 
     @media (max-height: 800px) {
-        font-size: 0.5rem;
+        font-size: calc(var(--font-size-base) * var(--font-size-height-small));
     }
     @media (max-height: 600px) {
-        font-size: 0.4rem;
+        font-size: calc(var(--font-size-base) * var(--font-size-height-medium));
     }
     @media (max-height: 400px) {
-        font-size: 0.35rem;
+        font-size: calc(var(--font-size-base) * var(--font-size-height-large));
     }
     @media (max-height: 200px) {
-        font-size: 0.25rem;
+        font-size: calc(var(--font-size-base) * var(--font-size-height-xlarge));
     }
 }
 
@@ -272,10 +288,9 @@ a {
 }
 
 .container {
-    padding-top: 5vh;
+    padding-top: 0;
     display: flex;
     flex-direction: column;
-    height: max-content;
 }
 
 .experience {
@@ -659,8 +674,9 @@ a {
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
             border-radius: 20px;
             padding: 0;
-            height: fit-content;
+            height: min-content;
             overflow: hidden;
+            margin: 0;
             
             .card {
                 overflow: hidden;
@@ -668,12 +684,11 @@ a {
                 display: grid;
                 grid-template-columns: repeat(2,1fr);
                 grid-template-rows: repeat(2,1fr);
-                gap: 0.1rem;
                 padding: 0;
                 grid-template-areas: 'box-a box-b' 'box-c box-d';
                 cursor: pointer;
                 margin: 0;
-                height: fit-content;
+                height: auto;
             
                 &__img {
                     display: flex;
@@ -723,35 +738,35 @@ a {
             
                     &-number {
                         color: white;
-                        font-size: 5.5rem;
+                        font-size: 4.5rem;
                         font-family: "tt-autonomous", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
                         font-weight: 200;
                         line-height: 0.8;
                         grid-area: number;
                         text-decoration: underline;
-                        text-decoration-thickness: 0.4rem;
+                        text-decoration-thickness: 0.6px;
                         text-decoration-color: white;
-                        padding: 1vh;
+                        padding: 0.25vh;
                         height: fit-content;
-                        margin: 1vh;
+                        margin: 0.5vh 0.25vw;
                     }
             
                     &-tags {
                         color: white;
                         grid-area: tags;
-                        width: 90%;
+                        width: 85%;
                         height: fit-content;
                         margin-top: 1vh;
-                        margin-left: 1.5em;
+                        margin-left: 2em;
                         padding: 0;
-                        font-size: 2.5rem;
+                        font-size: 2rem;
                         text-wrap: wrap;
                     }
                     
                     &-category {
                         color: white;
                         grid-area: category;
-                        font-size: 2rem;
+                        font-size: 1.325rem;
                         margin: 1vh 0.5vw;
                         height: 100%;
                         width: 90%;
@@ -775,7 +790,7 @@ a {
                 flex-direction: column;
                 align-items: flex-start;
                 position: relative;
-                height: fit-content;
+                height: auto;
                 font-size: 5rem;
                 font-family: $font-family;
                 margin: 0;

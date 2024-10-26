@@ -112,49 +112,7 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                         </span>
                     </span>
                 </div>
-                {/* <div className="hero-img">
-                    <img src={require('../assets/imgs/headshot.jpg')}></img>
-                </div> */}
             </div>
-            
-            {/* <div id="experience" className="container">
-                <div className="experience">
-                    <h1>Experience</h1>
-                    <div className="experience-details">
-                        <div className="work-header">
-                            <h2>Privy Council Office</h2>
-                            <hr/>
-                            <h4>Jan 2024 - Apr 2024</h4>
-                        </div>
-                        <div className="work-role"><h3>Data Analyst</h3></div>
-                        <div className="work-details">
-                            <ul>
-                                <li><p>Leveraged Tableau and PowerBI to update, refine, and compose interactive tailored dashboards for detailed meta-analysis of cross-functional organization metrics for Employment Equity, Security and Intelligence, and Foreign and Defence Policy.</p></li>
-                                <li><p>Engineered automated workflows using Tableau prep, Power Automate, and Python scripts and conducted stringent reviews to actively enhance efficiencies, lowering overhead costs.</p></li>
-                                <li><p>Spearheaded the migration of on-premises data to an Azure data lakehouse to take advantage of cost savings, improve scalability and security, and enable advanced analytics including machine learning.</p></li>
-                            </ul>
-                        </div>
-                        <div className="work-header">
-                            <h2>Microsoft</h2>
-                            <hr/>
-                            <h4>May 2023 - Aug 2023</h4>
-                        </div>
-                        <div className="work-role"><h3>Azure Artifical Intelligence for Financial Advising</h3></div>
-                        <div className="work-details">
-                            <ul>
-                                <li><p>Prototyped an intuitive and interactive financial advising chatbot with Azure AI services, to help open up investment options to the 77% of Canadians that own investments.</p></li>
-                                <li><p>Outlined machine learning and NLP pipelines with Azure Language Studio and Azure Bot Service to allow the chatbot to comprehensively answer general or specific questions about investments.</p></li>
-                                <li><p>Preprocessed and validated data from various sources to ensure the chatbot provides accurate responses.</p></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <a href="https://drive.google.com/file/d/1VFCrwBYR7gYGkXkRjBRwZPQRys0t_ph9/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-                        <button className="btn-shine">
-                            <span>Resume</span>
-                        </button>
-                    </a>
-                </div>
-            </div> */}
 
             {isProject ? (<div id="projects" className="container">
                 <div className="projects">
@@ -424,6 +382,7 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                     <div className="about-details">
                         <ul>
                             <li><p>I am a second year student studying Computing and Financial Management at the University of Waterloo. A double major in Computer Science and Financial Management. With a passion for leveraging technology to drive financial innovation, I bring a unique blend of academic excellence and practical experience to the table.</p></li>
+                            <li><p>I am currently working at Global X Canada as a Quantitative Investment Associate. On a day-to-day basis, I make use of Python to modernize existing processes, to improve both trade execution and strategy development in the midst of ETF decision making. Some of my notable projects include, using luigi to assist with better task scheduling for daily processes and building a new feature for Fixed Income trading stratgy into the in-house trading tool</p></li>
                             <li><p>I spent my previous work term working as a Data Analyst as part of the Corporate Analytics and Special Projects team at the Privy Council Office - a department of the Federal Government of Canada. I used tools such as Tableau and PowerBI to provide insightful analytics into company metrics, improving employment equity, foreign and defence policy, as well as security and intelligence. I also spearheaded the migration of on-premises data to a data lakehouse on Microsoft Fabric.</p></li>
                             <li><p>Driven by a keen interest in machine learning, data science, and web development, I am particularly drawn to the dynamic field of fintech. Recognizing the transformative potential of technology in reshaping financial services, I am eager to contribute my skills and knowledge towards driving innovation in this rapidly evolving sector.</p></li>
                             <li><p>Outside of work and academics, I enjoy playing badminton, chess, listening to music and playing the guitar.</p></li>
