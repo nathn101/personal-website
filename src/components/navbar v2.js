@@ -2,7 +2,7 @@ import React from 'react';
 import './navbar v2.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUser, faPencil, faCode } from '@fortawesome/free-solid-svg-icons';
-import Logo from '../assets/logo/logo1.png';
+import Logo from '../assets/logo/logo-no-bg.png';
 import { faPen } from '@fortawesome/free-solid-svg-icons/faPen';
 
 const Navbarv2 = ({setIsProject, setIsAbout, setIsConnect}) => {
