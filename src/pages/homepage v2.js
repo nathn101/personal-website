@@ -209,6 +209,62 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                         </div>
                         <div className="project">
                             <div className="card card--alt">
+                                <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/spotify-website.png')})`}}></div>
+                                <div className="card__box card__box--a">
+                                    <span className="card__box-number">05</span>
+                                    <span className="card__box-tags project-name">Spotify Matchmaker</span>
+                                </div>
+                                <div className="card__box card__box--d">
+                                    <span className="card__box-category project-description">
+                                        A matchmaking application that uses machine learning to match people based on their Spotify listening profiles
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="project-brief">
+                                <div className="project-brief-topics">
+                                    <p>Machine Learning</p>
+                                    <p>Web Dev</p>
+                                </div>
+                                <h1>Music Matchmaker</h1>
+                                <span><a href="https://github.com/nathn101/InSync" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
+                                <div className="project-brief-tech">
+                                    <div className="project-brief-tech-html">
+                                        <FaHtml5 />
+                                        <span>HTML</span>
+                                    </div>
+                                    <div className="project-brief-tech-css">
+                                        <FaCss3Alt />
+                                        <span>CSS</span>
+                                    </div>
+                                    <div className="project-brief-tech-js">
+                                        <FaJs />
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <div className="project-brief-tech-react">
+                                        <FaReact />
+                                        <span>React</span>
+                                    </div>
+                                    <div className="project-brief-tech-python">
+                                        <FaPython />
+                                        <span>Python</span>
+                                    </div>
+                                    <div className="project-brief-tech-pandas">
+                                        <SiPandas />
+                                        <span>Pandas</span>
+                                    </div>
+                                    <div className="project-brief-tech-numpy">
+                                        <SiNumpy />
+                                        <span>Numpy</span>
+                                    </div>
+                                    <div className="project-brief-tech-scikit">
+                                        <SiScikitlearn />
+                                        <span>Scikit-learn</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="project">
+                            <div className="card card--alt">
                                 <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/tag-team.png')})`}}></div>
                                 <div className="card__box card__box--a">
                                     <span className="card__box-number">03</span>
@@ -311,62 +367,6 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                                     <div className="project-brief-tech-flask">
                                         <SiFlask />
                                         <span>Flask</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="project">
-                            <div className="card card--alt">
-                                <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/spotify-website.png')})`}}></div>
-                                <div className="card__box card__box--a">
-                                    <span className="card__box-number">05</span>
-                                    <span className="card__box-tags project-name">Spotify Matchmaker</span>
-                                </div>
-                                <div className="card__box card__box--d">
-                                    <span className="card__box-category project-description">
-                                        A matchmaking application that uses machine learning to match people based on their Spotify listening profiles
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="project-brief">
-                                <div className="project-brief-topics">
-                                    <p>Machine Learning</p>
-                                    <p>Web Dev</p>
-                                </div>
-                                <h1>Music Matchmaker</h1>
-                                <span><a href="https://github.com/nathn101/InSync" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
-                                <div className="project-brief-tech">
-                                    <div className="project-brief-tech-html">
-                                        <FaHtml5 />
-                                        <span>HTML</span>
-                                    </div>
-                                    <div className="project-brief-tech-css">
-                                        <FaCss3Alt />
-                                        <span>CSS</span>
-                                    </div>
-                                    <div className="project-brief-tech-js">
-                                        <FaJs />
-                                        <span>JavaScript</span>
-                                    </div>
-                                    <div className="project-brief-tech-react">
-                                        <FaReact />
-                                        <span>React</span>
-                                    </div>
-                                    <div className="project-brief-tech-python">
-                                        <FaPython />
-                                        <span>Python</span>
-                                    </div>
-                                    <div className="project-brief-tech-pandas">
-                                        <SiPandas />
-                                        <span>Pandas</span>
-                                    </div>
-                                    <div className="project-brief-tech-numpy">
-                                        <SiNumpy />
-                                        <span>Numpy</span>
-                                    </div>
-                                    <div className="project-brief-tech-scikit">
-                                        <SiScikitlearn />
-                                        <span>Scikit-learn</span>
                                     </div>
                                 </div>
                             </div>
