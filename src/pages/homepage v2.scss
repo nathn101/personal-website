@@ -1,48 +1,52 @@
 $font-family: 'open-sans', sans-serif;
 
 :root {
-    --font-size-base: 1rem;
+    --font-size-base: 2rem;
     --font-size-scale-small: 0.5;
     --font-size-scale-medium: 0.45;
     --font-size-scale-large: 0.3;
     --font-size-scale-xlarge: 0.2;
 
-    --font-size-height-small: 0.5;
-    --font-size-height-medium: 0.4;
-    --font-size-height-large: 0.35;
-    --font-size-height-xlarge: 0.25;
+    --icon-size-base: 3.5rem;
+    --icon-size-scale-small: 0.9;
+    --icon-size-scale-medium: 0.89;
+    --icon-size-scale-large: 0.88;
+    --icon-size-scale-xlarge: 0.87;
 
     scroll-behavior: smooth;
 }
 
-:root {
-    scroll-behavior: smooth;
-
-    @media (max-width: 1000px) {
+@media (max-width: 1000px) {
+    :root {
         font-size: calc(var(--font-size-base) * var(--font-size-scale-small));
+        --icon-size: calc(var(--icon-size-base) * var(--icon-size-scale-small));
     }
-    @media (max-width: 800px) {
-        font-size: calc(var(--font-size-base) * var(--font-size-scale-medium));
-    }
-    @media (max-width: 600px) {
-        font-size: calc(var(--font-size-base) * var(--font-size-scale-large));
-    }
-    @media (max-width: 400px) {
-        font-size: calc(var(--font-size-base) * var(--font-size-scale-xlarge));
-    }
+}
 
-    @media (max-height: 800px) {
-        font-size: calc(var(--font-size-base) * var(--font-size-height-small));
+@media (max-width: 800px) {
+    :root {
+        font-size: calc(var(--font-size-base) * var(--font-size-scale-medium));
+        --icon-size: calc(var(--icon-size-base) * var(--icon-size-scale-medium));
     }
-    @media (max-height: 600px) {
-        font-size: calc(var(--font-size-base) * var(--font-size-height-medium));
+}
+
+@media (max-width: 600px) {
+    :root {
+        font-size: calc(var(--font-size-base) * var(--font-size-scale-large));
+        --icon-size: calc(var(--icon-size-base) * var(--icon-size-scale-large));
     }
-    @media (max-height: 400px) {
-        font-size: calc(var(--font-size-base) * var(--font-size-height-large));
+}
+
+@media (max-width: 400px) {
+    :root {
+        font-size: calc(var(--font-size-base) * var(--font-size-scale-xlarge));
+        --icon-size: calc(var(--icon-size-base) * var(--icon-size-scale-xlarge));
     }
-    @media (max-height: 200px) {
-        font-size: calc(var(--font-size-base) * var(--font-size-height-xlarge));
-    }
+}
+
+.hero-link svg {
+    width: var(--icon-size);
+    height: var(--icon-size);
 }
 
 ::-webkit-scrollbar {
