@@ -248,18 +248,6 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                                         <FaPython />
                                         <span>Python</span>
                                     </div>
-                                    <div className="project-brief-tech-pandas">
-                                        <SiPandas />
-                                        <span>Pandas</span>
-                                    </div>
-                                    <div className="project-brief-tech-numpy">
-                                        <SiNumpy />
-                                        <span>Numpy</span>
-                                    </div>
-                                    <div className="project-brief-tech-scikit">
-                                        <SiScikitlearn />
-                                        <span>Scikit-learn</span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
