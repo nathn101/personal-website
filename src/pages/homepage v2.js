@@ -244,10 +244,6 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                                         <FaReact />
                                         <span>React</span>
                                     </div>
-                                    <div className="project-brief-tech-python">
-                                        <FaPython />
-                                        <span>Python</span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
