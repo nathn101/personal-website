@@ -3,12 +3,21 @@ html {
 }
 
 body {
+  height: 100%;
   margin: 0;
   font-family: 300 11px/1.4 'Helvetica Neue', 'sans-serif';
   color: #444;
-  background: linear-gradient(217deg, rgba(99, 214, 255, 0.684), rgba(255,0,0,0) 70.71%),            linear-gradient(127deg, rgba(255, 255, 255, 0.892), rgba(0,255,0,0) 70.71%),            linear-gradient(336deg, rgba(0, 81, 255, 0.8), rgba(0,0,255,0) 70.71%);
+  /* background: linear-gradient(217deg, rgba(99, 214, 255, 0.684), rgba(255,0,0,0) 70.71%),            linear-gradient(127deg, rgba(255, 255, 255, 0.892), rgba(0,255,0,0) 70.71%),            linear-gradient(336deg, rgba(0, 81, 255, 0.8), rgba(0,0,255,0) 70.71%); */
   overflow: auto;
   display: block;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.vanta-small {
+  height: 100%;
+}
+
+.vanta-large {
+  height: 100%;
 }

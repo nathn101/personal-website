@@ -193,7 +193,7 @@ a {
     flex-direction: column;
     width: 80vw;
     height: 100%;
-
+    margin-top: 20vh;
 
     & > h1 {
         position: relative;
@@ -313,7 +313,7 @@ a {
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-top: -5vh;
+    padding-top: 25vh;
     align-items: center;
     height: fit-content;
     width: 95vw;
@@ -424,6 +424,7 @@ a {
     border: 0.25vw solid rgba(255, 255, 255, 0.685);
     border-radius: 1vw;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    gap: 3vh;
 
     & > h1 {
         margin-top: 2vh;
@@ -599,7 +600,7 @@ a {
     max-width: 100%;
     min-width: 95vw;
     height: 80vh;
-    background: radial-gradient(circle, rgba(38,54,59,1) 0%, rgba(69,98,111,1) 0%, rgba(38,54,59,1) 35%);
+    // background: radial-gradient(circle, rgba(38,54,59,1) 0%, rgba(69,98,111,1) 0%, rgba(38,54,59,1) 35%);
 
     &-text {
         display: flex;
@@ -647,6 +648,7 @@ a {
         margin: 0 1vw;
         padding: 0;
         width: 60%;
+        gap: 3vh;
         min-height: 30vh;
 
         .hero-link {
@@ -740,7 +742,7 @@ a {
     justify-content: center;
     align-items: center;
     max-width: 100vw;                
-    background: #26363b;
+    // background: #26363b;
     color: white;
     font-family: $font-family;
 }
@@ -791,7 +793,7 @@ a {
             justify-content: center;
             align-items: center;
             background-color: rgba(255, 255, 255, 0.425);
-            border: 0.25vw solid rgba(255, 255, 255, 0.685);
+            border: 2.5px solid rgba(255, 255, 255, 0.685);
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
             border-radius: 20px;
             padding: 0;
@@ -940,10 +942,10 @@ a {
                     display: flex;
                     flex-direction: row;
                     position: relative;
+                    margin: 0 2vw;
                     margin-left: 1vw;
-                    margin-bottom: 0;
                     font-size: 1.2rem;
-                    gap: 0.2vw;
+                    gap: 1vw;
                     color: black;
 
                     p {
@@ -1002,7 +1004,7 @@ a {
                     }
 
                     &-css:hover, &-html:hover, &-js:hover, &-jupyter:hover, &-react:hover, &-python:hover, &-pandas:hover, &-numpy:hover, &-scikit:hover, &-googlecloud:hover, &-openai:hover, &-googlegemini:hover, &-flask:hover {
-                        color:rgba(11, 247, 255, 0.853);
+                        color:rgba(11, 247, 255, 0.855);
                         span {
                             visibility: visible;
                             opacity: 1;
