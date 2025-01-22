@@ -119,99 +119,11 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                     <h1>My Projects</h1>
                     <hr></hr>
                     <div className="grid" data-effect="hover-1">
-                        <div className="project">
-                            <div className="card card--alt">
-                                <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/stock-market.jpg')})`}}></div>
-                                <div className="card__box card__box--a">
-                                    <span className="card__box-number">01</span>
-                                    <span className="card__box-tags project-name">Python Roboadvisor</span>
-                                </div>
-                                <div className="card__box card__box--d">
-                                    <span className="card__box-category project-description">
-                                        A roboadvisor that generates an optimized portfolio from a given list of stocks for clients with low-risk tolerance
-                                        <span></span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="project-brief">
-                                <div className="project-brief-topics">
-                                    <p>Financial Modelling</p>
-                                    <p>Data Engineering</p>
-                                    <p>Data Visualization</p>
-                                </div>
-                                <h1>Portfolio Generator</h1>
-                                <span><a href="https://github.com/nathn101/Python-Roboadvisor" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
-                                <div className="project-brief-tech">
-                                    <div className="project-brief-tech-python">
-                                        <FaPython />
-                                        <span>Python</span>
-                                    </div>
-                                    <div className="project-brief-tech-jupyter">
-                                        <SiJupyter />
-                                        <span>Jupyter</span>
-                                    </div>
-                                    <div className="project-brief-tech-pandas">
-                                        <SiPandas />
-                                        <span>Pandas</span>
-                                    </div>
-                                    <div className="project-brief-tech-numpy">
-                                        <SiNumpy />
-                                        <span>Numpy</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="project">
-                            <div className="card card--alt">
-                                <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/ml-churney.jpeg')})`}}></div>
-                                <div className="card__box card__box--a">
-                                    <span className="card__box-number">02</span>
-                                    <span className="card__box-tags project-name">Our ML Churney</span>
-                                </div>
-                                <div className="card__box card__box--d">
-                                    <span className="card__box-category project-description">
-                                        A custom prediction model for Infinite Investment Systems which predicts whether or not customers will churn
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="project-brief">
-                                <div className="project-brief-topics">
-                                    <p>Machine Learning</p>
-                                    <p>Data Engineering</p>
-                                    <p>Data Visualization</p>
-                                </div>
-                                <h1>Churn Prediction</h1>
-                                <span><a href="https://github.com/nathn101/DSC-Datathon" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
-                                <span><a href="https://devpost.com/software/our-ml-churney" target="_blank" rel="noopener noreferrer" className="open-icon"><SiDevpost/><p>Devpost</p><IoOpenOutline /></a></span>
-                                <div className="project-brief-tech">
-                                    <div className="project-brief-tech-python">
-                                        <FaPython />
-                                        <span>Python</span>
-                                    </div>
-                                    <div className="project-brief-tech-jupyter">
-                                        <SiJupyter />
-                                        <span>Jupyter</span>
-                                    </div>
-                                    <div className="project-brief-tech-pandas">
-                                        <SiPandas />
-                                        <span>Pandas</span>
-                                    </div>
-                                    <div className="project-brief-tech-numpy">
-                                        <SiNumpy />
-                                        <span>Numpy</span>
-                                    </div>
-                                    <div className="project-brief-tech-scikit">
-                                        <SiScikitlearn />
-                                        <span>Scikit-learn</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="project">
+                    <div className="project">
                             <div className="card card--alt">
                                 <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/spotify-website.png')})`}}></div>
                                 <div className="card__box card__box--a">
-                                    <span className="card__box-number">05</span>
+                                    <span className="card__box-number">01</span>
                                     <span className="card__box-tags project-name">Spotify Matchmaker</span>
                                 </div>
                                 <div className="card__box card__box--d">
@@ -249,59 +161,9 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                         </div>
                         <div className="project">
                             <div className="card card--alt">
-                                <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/tag-team.png')})`}}></div>
-                                <div className="card__box card__box--a">
-                                    <span className="card__box-number">03</span>
-                                    <span className="card__box-tags project-name">Tag-Team</span>
-                                </div>
-                                <div className="card__box card__box--d">
-                                    <span className="card__box-category project-description">
-                                        A note-sharing application that allows users to scan documents and easily share them among a group of people
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="project-brief">
-                                <div className="project-brief-topics">
-                                    <p>Web Dev</p>
-                                    <p>Natural Language Processing</p>
-                                    <p>Computer Vision</p>
-                                </div>
-                                <h1>Note-Sharing</h1>
-                                <span><a href="https://github.com/nathn101/ml-note-app" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
-                                <span><a href="https://devpost.com/software/tagteam-c7o4pz" target="_blank" rel="noopener noreferrer" className="open-icon"><SiDevpost/><p>Devpost</p><IoOpenOutline /></a></span>
-                                <div className="project-brief-tech">
-                                    <div className="project-brief-tech-html">
-                                        <FaHtml5 />
-                                        <span>HTML</span>
-                                    </div>
-                                    <div className="project-brief-tech-css">
-                                        <FaCss3Alt />
-                                        <span>CSS</span>
-                                    </div>
-                                    <div className="project-brief-tech-js">
-                                        <FaJs />
-                                        <span>JavaScript</span>
-                                    </div>
-                                    <div className="project-brief-tech-react">
-                                        <FaReact />
-                                        <span>React</span>
-                                    </div>
-                                    <div className="project-brief-tech-googlecloud">
-                                        <SiGooglecloud />
-                                        <span>Google Cloud</span>
-                                    </div>
-                                    <div className="project-brief-tech-openai">
-                                        <RiOpenaiFill />
-                                        <span>OpenAI</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="project">
-                            <div className="card card--alt">
                                 <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/woke-cropped.png')})`}}></div>
                                 <div className="card__box card__box--a">
-                                    <span className="card__box-number">04</span>
+                                    <span className="card__box-number">02</span>
                                     <span className="card__box-tags project-name">WOKE</span>
                                 </div>
                                 <div className="card__box card__box--d">
@@ -351,6 +213,144 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                                     <div className="project-brief-tech-flask">
                                         <SiFlask />
                                         <span>Flask</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="project">
+                            <div className="card card--alt">
+                                <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/stock-market.jpg')})`}}></div>
+                                <div className="card__box card__box--a">
+                                    <span className="card__box-number">03</span>
+                                    <span className="card__box-tags project-name">Python Roboadvisor</span>
+                                </div>
+                                <div className="card__box card__box--d">
+                                    <span className="card__box-category project-description">
+                                        A roboadvisor that generates an optimized portfolio from a given list of stocks for clients with low-risk tolerance
+                                        <span></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="project-brief">
+                                <div className="project-brief-topics">
+                                    <p>Financial Modelling</p>
+                                    <p>Data Engineering</p>
+                                    <p>Data Visualization</p>
+                                </div>
+                                <h1>Portfolio Generator</h1>
+                                <span><a href="https://github.com/nathn101/Python-Roboadvisor" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
+                                <div className="project-brief-tech">
+                                    <div className="project-brief-tech-python">
+                                        <FaPython />
+                                        <span>Python</span>
+                                    </div>
+                                    <div className="project-brief-tech-jupyter">
+                                        <SiJupyter />
+                                        <span>Jupyter</span>
+                                    </div>
+                                    <div className="project-brief-tech-pandas">
+                                        <SiPandas />
+                                        <span>Pandas</span>
+                                    </div>
+                                    <div className="project-brief-tech-numpy">
+                                        <SiNumpy />
+                                        <span>Numpy</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="project">
+                            <div className="card card--alt">
+                                <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/ml-churney.jpeg')})`}}></div>
+                                <div className="card__box card__box--a">
+                                    <span className="card__box-number">04</span>
+                                    <span className="card__box-tags project-name">Our ML Churney</span>
+                                </div>
+                                <div className="card__box card__box--d">
+                                    <span className="card__box-category project-description">
+                                        A custom prediction model for Infinite Investment Systems which predicts whether or not customers will churn
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="project-brief">
+                                <div className="project-brief-topics">
+                                    <p>Machine Learning</p>
+                                    <p>Data Engineering</p>
+                                    <p>Data Visualization</p>
+                                </div>
+                                <h1>Churn Prediction</h1>
+                                <span><a href="https://github.com/nathn101/DSC-Datathon" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
+                                <span><a href="https://devpost.com/software/our-ml-churney" target="_blank" rel="noopener noreferrer" className="open-icon"><SiDevpost/><p>Devpost</p><IoOpenOutline /></a></span>
+                                <div className="project-brief-tech">
+                                    <div className="project-brief-tech-python">
+                                        <FaPython />
+                                        <span>Python</span>
+                                    </div>
+                                    <div className="project-brief-tech-jupyter">
+                                        <SiJupyter />
+                                        <span>Jupyter</span>
+                                    </div>
+                                    <div className="project-brief-tech-pandas">
+                                        <SiPandas />
+                                        <span>Pandas</span>
+                                    </div>
+                                    <div className="project-brief-tech-numpy">
+                                        <SiNumpy />
+                                        <span>Numpy</span>
+                                    </div>
+                                    <div className="project-brief-tech-scikit">
+                                        <SiScikitlearn />
+                                        <span>Scikit-learn</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="project">
+                            <div className="card card--alt">
+                                <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/tag-team.png')})`}}></div>
+                                <div className="card__box card__box--a">
+                                    <span className="card__box-number">05</span>
+                                    <span className="card__box-tags project-name">Tag-Team</span>
+                                </div>
+                                <div className="card__box card__box--d">
+                                    <span className="card__box-category project-description">
+                                        A note-sharing application that allows users to scan documents and easily share them among a group of people
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="project-brief">
+                                <div className="project-brief-topics">
+                                    <p>Web Dev</p>
+                                    <p>Natural Language Processing</p>
+                                    <p>Computer Vision</p>
+                                </div>
+                                <h1>Note-Sharing</h1>
+                                <span><a href="https://github.com/nathn101/ml-note-app" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
+                                <span><a href="https://devpost.com/software/tagteam-c7o4pz" target="_blank" rel="noopener noreferrer" className="open-icon"><SiDevpost/><p>Devpost</p><IoOpenOutline /></a></span>
+                                <div className="project-brief-tech">
+                                    <div className="project-brief-tech-html">
+                                        <FaHtml5 />
+                                        <span>HTML</span>
+                                    </div>
+                                    <div className="project-brief-tech-css">
+                                        <FaCss3Alt />
+                                        <span>CSS</span>
+                                    </div>
+                                    <div className="project-brief-tech-js">
+                                        <FaJs />
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <div className="project-brief-tech-react">
+                                        <FaReact />
+                                        <span>React</span>
+                                    </div>
+                                    <div className="project-brief-tech-googlecloud">
+                                        <SiGooglecloud />
+                                        <span>Google Cloud</span>
+                                    </div>
+                                    <div className="project-brief-tech-openai">
+                                        <RiOpenaiFill />
+                                        <span>OpenAI</span>
                                     </div>
                                 </div>
                             </div>
