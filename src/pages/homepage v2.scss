@@ -934,7 +934,6 @@ a {
                     font-family: $font-family;
                     font-weight: 100;
                     text-align: center;
-                    text-decoration: underline;
                     text-decoration-color: white;
                 }
                 
@@ -947,11 +946,11 @@ a {
                     font-size: 1.2rem;
                     gap: 1vw;
                     color: black;
-
                     p {
                         border-radius: 9999px;
                         background-color: white;
-                        padding: 1vh;
+                        height: min-content;
+                        padding: 0.5vh;
                         display: flex;
                         flex-direction: row;
                         justify-content: center;

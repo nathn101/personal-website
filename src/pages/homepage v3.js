@@ -1,0 +1,514 @@
+import { useEffect, useRef, useState } from "react";
+import "./homepage v3.scss";
+import Logo from '../assets/logo/logo-no-bg.png';
+import { TypeAnimation } from 'react-type-animation';
+import { FaPython, FaHtml5, FaCss3Alt, FaReact, FaJs, FaGithub, FaLinkedin, FaFile, FaSpotify } from "react-icons/fa";
+import { FaSquareInstagram } from "react-icons/fa6";
+import { height, width } from "@fortawesome/free-solid-svg-icons/faPen";
+
+const HomeV3 = () => {
+  const canvasRef = useRef(null);
+  const [activeSection, setActiveSection] = useState("projects");
+  const FORM_ID = process.env.REACT_APP_FORM_ID;
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    const particles = [];
+    const particleCount = 80;
+    const maxDistance = 100;
+    const canvasWidth = window.innerWidth;
+    const canvasHeight = window.innerHeight;
+
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvasWidth;
+        this.y = Math.random() * canvasHeight;
+        this.vx = (Math.random() - 0.5) * 2;
+        this.vy = (Math.random() - 0.5) * 2;
+        this.radius = 2;
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "#00ffff"; // Cyan color
+        ctx.fill();
+        ctx.closePath();
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if (this.x < 0 || this.x > canvasWidth) this.vx *= -1;
+        if (this.y < 0 || this.y > canvasHeight) this.vy *= -1;
+      }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    const drawLines = () => {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < maxDistance) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / maxDistance})`; // Cyan lines with fading effect
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+            ctx.closePath();
+          }
+        }
+      }
+    };
+
+    let frameCount = 0;
+    const frameSkip = 2; // Adjust this to control speed (higher = slower)
+
+    const animate = () => {
+        if (frameCount % frameSkip === 0) {
+            ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+            particles.forEach((particle) => {
+                particle.update();
+                particle.draw();
+            });
+            drawLines();
+        }
+        
+        frameCount++;
+        requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      cancelAnimationFrame(animate);
+    };
+  }, []);
+
+  const renderContent = () => {
+    return (
+      <div id="#" className="hero-container">
+        <section className="hero">
+          <h1>Hi, I'm Nathan</h1>
+          <h2>
+            <TypeAnimation 
+              sequence={["a Software Developer", 2000, "an ML Engineer", 2000, "a Data Scientist", 2000]}
+              wrapper="span"
+              cursor={true}
+              speed={300}
+              deletionSpeed={200}
+              repeat={Infinity}
+            />
+          </h2>
+          <p>Computer Science and Finance Student @ University of Waterloo</p>
+        </section>
+        <div className="social-links">
+          <a href="https://github.com/nathn101" target="_blank" rel="noopener noreferrer">
+            <FaGithub size={30} /> Github
+          </a>
+          <a href="https://www.linkedin.com/in/nc101/" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin size={30} /> LinkedIn
+          </a>
+          <a href="https://drive.google.com/file/d/1dfIiR90f-bbYxgaJNmNZoFg8_SUaW8IE/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+            <FaFile size={30} /> Resume
+          </a>
+        </div>
+      </div>
+    );
+  };
+
+  const ProjectSection = () => {
+    return (
+      <section className="projects" id="projects">
+        <h2 className="section-header">My Projects</h2>
+        <div className="projects-grid">
+          <div className="project-card">
+            <div className="project-content">
+              <h3>Spotify Matchmaker</h3>
+              <div className="tech-tags">
+                <span className="tech-tag">Python</span>
+                <span className="tech-tag">Machine Learning</span>
+                <span className="tech-tag">Web Dev</span>
+              </div>
+              <p>A matchmaking application that uses machine learning to match people based on their Spotify listening profiles</p>
+              <div className="project-links">
+                <a href="https://github.com/nathn101/InSync" target="_blank" rel="noopener noreferrer">Source Code</a>
+              </div>
+            </div>
+          </div>
+          <div className="project-card">
+            <div className="project-content">
+              <h3>WOKE</h3>
+              <div className="tech-tags">
+                <span className="tech-tag">AI</span>
+                <span className="tech-tag">Web Dev</span>
+                <span className="tech-tag">Computer Vision</span>
+              </div>
+              <p>A secure video-calling service equipped with AI capabililties to detect instances of deepfake impersonation</p>
+              <div className="project-links">
+                <a href="https://github.com/nathn101/genesis" target="_blank" rel="noopener noreferrer">Source Code</a>
+                <a href="https://devpost.com/software/woke-ocjzmr" target="_blank" rel="noopener noreferrer">Devpost</a>
+              </div>
+            </div>
+          </div>
+          <div className="project-card">
+            <div className="project-content">
+              <h3>Python Roboadvisor</h3>
+              <div className="tech-tags">
+                <span className="tech-tag">Financial Modelling</span>
+                <span className="tech-tag">Data Engineering</span>
+                <span className="tech-tag">Data Visualization</span>
+              </div>
+              <p>A roboadvisor that generates an optimized portfolio from a given list of stocks for clients with low-risk tolerance</p>
+              <div className="project-links">
+                <a href="https://github.com/nathn101/Python-Roboadvisor" target="_blank" rel="noopener noreferrer">Source Code</a>
+              </div>
+            </div>
+          </div>
+          <div className="project-card">
+            <div className="project-content">
+              <h3>Our ML Churney</h3>
+              <div className="tech-tags">
+                <span className="tech-tag">Machine Learning</span>
+                <span className="tech-tag">Data Engineering</span>
+                <span className="tech-tag">Data Visualization</span>
+              </div>
+              <p>A custom prediction model for Infinite Investment Systems which predicts whether or not customers will churn</p>
+              <div className="project-links">
+                <a href="https://github.com/nathn101/DSC-Datathon" target="_blank" rel="noopener noreferrer">Source Code</a>
+                <a href="https://devpost.com/software/our-ml-churney" target="_blank" rel="noopener noreferrer">Devpost</a>
+              </div>
+            </div>
+          </div>
+          <div className="project-card">
+            <div className="project-content">
+              <h3>Tag-Team</h3>
+              <div className="tech-tags">
+                <span className="tech-tag">Web Dev</span>
+                <span className="tech-tag">NLP</span>
+                <span className="tech-tag">Computer Vision</span>
+              </div>
+              <p>A note-sharing application that allows users to scan documents and easily share them among a group of people</p>
+              <div className="project-links">
+                <a href="https://github.com/nathn101/DSC-Datathon" target="_blank" rel="noopener noreferrer">Source Code</a>
+                <a href="https://devpost.com/software/our-ml-churney" target="_blank" rel="noopener noreferrer">Devpost</a>
+              </div>
+            </div>
+          </div>
+          <div className="project-card">
+            <div className="project-content">
+              <h3>Chess</h3>
+              <div className="tech-tags">
+                <span className="tech-tag">C++</span>
+                <span className="tech-tag">Game Dev</span>
+                <span className="tech-tag">OOP</span>
+              </div>
+              <p>A chess game developed using C++ that incorporates object-oriented programming principles.</p>
+            </div>
+          </div>
+          <div className="project-card">
+            <div className="project-content">
+              <h3>WLP4 Compiler and Assembler</h3>
+              <div className="tech-tags">
+                <span className="tech-tag">C</span>
+                <span className="tech-tag">Compiler Design</span>
+                <span className="tech-tag">Assembler</span>
+              </div>
+              <p>A compiler and assembler for a custom assembly language, WLP4, developed in C. This project involved parsing, semantic analysis, and code generation.</p>
+            </div>
+          </div>
+          <div className="project-card">
+            <div className="project-content">
+              <h3>Portfolio Website</h3>
+              <div className="tech-tags">
+                <span className="tech-tag">React</span>
+                <span className="tech-tag">Next.js</span>
+                <span className="tech-tag">Web Dev</span>
+              </div>
+              <p>This portfolio website is built using React and Next.js, showcasing my projects and skills.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  const WorkTimeline = () => {
+    return (
+      <div className="experience-timeline">
+        <h3>Work Experience</h3>
+        <div className="timeline">
+          <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <div className="timeline-content">
+              <div className="timeline-header">
+                <h4>Incoming Software Engineer Intern</h4>
+                <span className="timeline-date">May 2025 - August 2025</span>
+              </div>
+              <div className="timeline-company">Jamlabs Data Science</div>
+            </div>
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <div className="timeline-content">
+              <div className="timeline-header">
+                <h4>Quantitative Developer</h4>
+                <span className="timeline-date">September 2024 - December 2024</span>
+              </div>
+              <div className="timeline-company">Global X ETFs</div>
+              <div className="tech-tags">
+                <span className="tech-tag">Python</span>
+                <span className="tech-tag">SQL</span>
+                <span className="tech-tag">Bloomberg</span>
+              </div>
+              <p>
+              Enhanced a portfolio management system by improving data validation and reducing errors. Automated task scheduling to streamline daily operations and boost efficiency. Improved trading processes by implementing automation, leading to better execution and reliability.
+              </p>
+            </div>
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <div className="timeline-content">
+              <div className="timeline-header">
+                <h4>Technical Data Analyst</h4>
+                <span className="timeline-date">January 2024 - April 2024</span>
+              </div>
+              <div className="timeline-company">Privy Council Office</div>
+              <div className="tech-tags">
+                <span className="tech-tag">Data Analysis</span>
+                <span className="tech-tag">Python</span>
+                <span className="tech-tag">Tableau</span>
+                <span className="tech-tag">PowerBI</span>
+              </div>
+              <p>
+              Utilized data visualization tools to create interactive dashboards for analyzing organizational metrics. Automated workflows to enhance efficiency and reduce costs. Led the migration of large-scale data to a cloud-based infrastructure, improving scalability, security, and analytical capabilities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  const AboutSection = () => {
+    return (
+      <section className="about" id="about">
+        <h2 className="section-header">About Me</h2>
+        <div className="about-grid">
+          <div className="about-card">
+            <h3>Background</h3>
+            <div className="tech-tags">
+              <span className="tech-tag">University of Waterloo</span>
+              <span className="tech-tag">Computer Science</span>
+              <span className="tech-tag">Finance</span>
+            </div>
+            <p>
+              I'm a passionate software developer with a strong foundation in computer science and finance. 
+              Currently studying at the University of Waterloo for Computing and Financial Management, I balance academic excellence with practical 
+              project development.
+            </p>
+          </div>
+  
+          <div className="about-card">
+            <h3>Technical Skills</h3>
+            <div className="skills-container">
+              <div className="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" style={{height:'30px', width:'30px'}}/>
+                <span>Python</span>
+              </div>
+              <div className="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" style={{height:'30px', width:'30px'}}/>
+                <span>C++</span>
+              </div>
+              <div className="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" style={{height:'30px', width:'30px'}}/>
+                <span>C</span>
+              </div>
+              <div className="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" style={{height:'30px', width:'30px'}}/>
+                <span>JavaScript</span>
+              </div>
+              <div className="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" style={{height:'30px', width:'30px'}}/>
+                <span>React</span>
+              </div>
+              <div className="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" style={{height:'30px', width:'30px'}}/>
+                <span>Next.js</span>
+              </div>
+              <div className="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" style={{height:'30px', width:'30px'}}/>
+                <span>HTML5</span>
+              </div>
+              <div className="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" style={{height:'30px', width:'30px'}}/>
+                <span>CSS3</span>
+              </div>
+              <div className="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" style={{height:'30px', width:'30px'}}/>
+                <span>Tailwind</span>
+              </div>
+              <div className="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" style={{height:'30px', width:'30px'}}/>
+                <span>Git</span>
+              </div>
+              <div className="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" style={{height:'30px', width:'30px'}}/>
+                <span>Azure</span>
+              </div>
+              <div className="skill-item">  
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg" style={{height:'30px', width:'30px'}}/>
+                <span>Blender</span>
+              </div>
+            </div>
+          </div>
+  
+          <div className="about-card">
+            <h3>Experience</h3>
+            <div className="tech-tags">
+              <span className="tech-tag">Software Development</span>
+              <span className="tech-tag">Machine Learning</span>
+              <span className="tech-tag">Data Science</span>
+            </div>
+            <p>
+              My experience spans across multiple domains including machine learning, web development, 
+              and financial modeling. I'm particularly interested in AI applications and building 
+              data-driven solutions that solve real-world problems.
+            </p>
+          </div>
+  
+          <div className="about-card">
+            <h3>Interests</h3>
+            <div className="tech-tags">
+              <span className="tech-tag">Financial Tech</span>
+              <span className="tech-tag">AI</span>
+            </div>
+            <p>
+              Beyond coding, I'm passionate about exploring the intersection of technology and finance. 
+              Outside of work and academics, I enjoy playing badminton, chess, listening to music and playing the guitar.
+            </p>
+          </div>
+        </div>
+
+        {WorkTimeline()}
+      </section>
+    );
+  };
+
+  const ContactSection = () => {
+    return (
+      <section className="contact" id="contact">
+        <h2 className="section-header">Contact Me</h2>
+        <div className="contact-grid">
+          <div className="contact-card">
+            <h3>Get In Touch!</h3>
+            <p>
+              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+              For any questions or if you want to chat, please feel free to contact me through Discord: @_nathn_ or by email!
+            </p>
+            
+            <div className="contact-methods">
+              <a href="mailto:nathan.ch.chu@gmail.com" className="contact-method">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>nathan.ch.chu@gmail.com</span>
+              </a>
+              
+              <a href="https://www.linkedin.com/in/nc101/" target="_blank" rel="noopener noreferrer" className="contact-method">
+                <FaLinkedin size={30} />
+                <span>nathn101</span>
+              </a>
+              
+              <a href="https://github.com/nathn101" target="_blank" rel="noopener noreferrer" className="contact-method">
+                <FaGithub size={30} />
+                <span>nathn101</span>
+              </a>
+
+              <a href='https://www.instagram.com/nathn0_0/' target="_blank" rel="noopener noreferrer" className="contact-method">
+                <FaSquareInstagram size={30}/>
+                <span>nathn0_0</span>
+              </a>
+
+              <a href='https://open.spotify.com/user/22i32facrqjg2lfp2ehn4bc7i?si=20aa642f9e5c45f1' target="_blank" rel="noopener noreferrer" className="contact-method">
+                <FaSpotify size={30}/>
+                <span>Spotify</span>
+              </a>
+            </div>
+          </div>
+  
+          <div className="contact-card">
+            <h3>Send a Message</h3>
+            <form className="contact-form" action={FORM_ID} method="POST">
+              <div className="form-group">
+                <input type="text" name="name"placeholder="Your Name" required />
+              </div>
+              <div className="form-group">
+                <input type="email" name="email" placeholder="Your Email" required />
+              </div>
+              <div className="form-group">
+                <input type="text" name="subject" placeholder="Subject" required />
+              </div>
+              <div className="form-group">
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+              </div>
+              <button type="submit" className="submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    );
+  };
+
+  const handleStateChange = () => {
+    switch(activeSection) {
+      case "projects":
+        return ProjectSection();
+      case "about":
+        return AboutSection();
+      case "contact":
+        return ContactSection();
+    }
+  };
+
+  return (
+    <div>
+      <canvas ref={canvasRef} id="network-canvas"></canvas>
+      <header className="navbar">
+        <a href="#" className="logo">
+          <div className="logo-symbol"><img src={Logo} alt="NC"></img></div>
+        </a>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#projects" onClick={() => setActiveSection("projects")}>Projects</a></li>
+            <li><a href="#about" onClick={() => setActiveSection("about")}>About</a></li>
+            <li><a href="#contact" onClick={() => setActiveSection("contact")}>Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      {renderContent()}
+      {handleStateChange()}
+      <footer style={{ textAlign: 'center', color: '#0ff7e8', padding: '15px'}}>
+        <p>&copy; 2025 NC</p>
+      </footer>
+    </div>
+  );
+};
+
+export default HomeV3;

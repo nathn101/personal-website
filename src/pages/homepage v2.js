@@ -119,7 +119,7 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                     <h1>My Projects</h1>
                     <hr></hr>
                     <div className="grid" data-effect="hover-1">
-                    <div className="project">
+                    <div className="card project">
                             <div className="card card--alt">
                                 <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/spotify-website.png')})`}}></div>
                                 <div className="card__box card__box--a">
@@ -138,7 +138,7 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                                     <p>Web Dev</p>
                                 </div>
                                 <h1>Music Matchmaker</h1>
-                                <span><a href="https://github.com/nathn101/InSync" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
+                                <span><a href="https://github.com/nathn101/InSync" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/></a></span>
                                 <div className="project-brief-tech">
                                     <div className="project-brief-tech-html">
                                         <FaHtml5 />
@@ -159,7 +159,7 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                                 </div>
                             </div>
                         </div>
-                        <div className="project">
+                        <div className="card project">
                             <div className="card card--alt">
                                 <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/woke-cropped.png')})`}}></div>
                                 <div className="card__box card__box--a">
@@ -179,8 +179,10 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                                     <p>Computer Vision</p>
                                 </div>
                                 <h1>Deepfake Detection</h1>
-                                <span><a href="https://github.com/nathn101/genesis" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
-                                <span><a href="https://devpost.com/software/woke-ocjzmr" target="_blank" rel="noopener noreferrer" className="open-icon"><SiDevpost/><p>Devpost</p><IoOpenOutline /></a></span>
+                                <span style={{display: 'flex', gap: '10px'}}>
+                                    <span><a href="https://github.com/nathn101/genesis" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/></a></span>
+                                    <span><a href="https://devpost.com/software/woke-ocjzmr" target="_blank" rel="noopener noreferrer" className="open-icon"><SiDevpost/></a></span>
+                                </span>
                                 <div className="project-brief-tech">
                                     <div className="project-brief-tech-html">
                                         <FaHtml5 />
@@ -217,7 +219,7 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                                 </div>
                             </div>
                         </div>
-                        <div className="project">
+                        <div className="card project">
                             <div className="card card--alt">
                                 <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/stock-market.jpg')})`}}></div>
                                 <div className="card__box card__box--a">
@@ -238,7 +240,7 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                                     <p>Data Visualization</p>
                                 </div>
                                 <h1>Portfolio Generator</h1>
-                                <span><a href="https://github.com/nathn101/Python-Roboadvisor" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
+                                <span><a href="https://github.com/nathn101/Python-Roboadvisor" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/></a></span>
                                 <div className="project-brief-tech">
                                     <div className="project-brief-tech-python">
                                         <FaPython />
@@ -259,7 +261,7 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                                 </div>
                             </div>
                         </div>
-                        <div className="project">
+                        <div className="card project">
                             <div className="card card--alt">
                                 <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/ml-churney.jpeg')})`}}></div>
                                 <div className="card__box card__box--a">
@@ -279,8 +281,10 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                                     <p>Data Visualization</p>
                                 </div>
                                 <h1>Churn Prediction</h1>
-                                <span><a href="https://github.com/nathn101/DSC-Datathon" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
-                                <span><a href="https://devpost.com/software/our-ml-churney" target="_blank" rel="noopener noreferrer" className="open-icon"><SiDevpost/><p>Devpost</p><IoOpenOutline /></a></span>
+                                <span style={{display: 'flex', gap: '10px'}}>
+                                    <span><a href="https://github.com/nathn101/DSC-Datathon" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/></a></span>
+                                    <span><a href="https://devpost.com/software/our-ml-churney" target="_blank" rel="noopener noreferrer" className="open-icon"><SiDevpost/></a></span>
+                                </span>
                                 <div className="project-brief-tech">
                                     <div className="project-brief-tech-python">
                                         <FaPython />
@@ -305,7 +309,7 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                                 </div>
                             </div>
                         </div>
-                        <div className="project">
+                        <div className="card project">
                             <div className="card card--alt">
                                 <div className="card__img" style={{backgroundImage: `url(${require('../assets/imgs/tag-team.png')})`}}></div>
                                 <div className="card__box card__box--a">
@@ -325,8 +329,10 @@ const Homev2 = ({ isProject, setIsProject, isAbout, setIsAbout, isConnect, setIs
                                     <p>Computer Vision</p>
                                 </div>
                                 <h1>Note-Sharing</h1>
-                                <span><a href="https://github.com/nathn101/ml-note-app" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/><p>Open in Github</p><IoOpenOutline /></a></span>
-                                <span><a href="https://devpost.com/software/tagteam-c7o4pz" target="_blank" rel="noopener noreferrer" className="open-icon"><SiDevpost/><p>Devpost</p><IoOpenOutline /></a></span>
+                                <span style={{display: 'flex', gap: '10px'}}>
+                                    <span><a href="https://github.com/nathn101/ml-note-app" target="_blank" rel="noopener noreferrer" className="open-icon"><FaGithub/></a></span>
+                                    <span><a href="https://devpost.com/software/tagteam-c7o4pz" target="_blank" rel="noopener noreferrer" className="open-icon"><SiDevpost/></a></span>
+                                </span>
                                 <div className="project-brief-tech">
                                     <div className="project-brief-tech-html">
                                         <FaHtml5 />
