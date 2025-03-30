@@ -649,6 +649,8 @@ nav ul {
 
   .tech-tags {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 1rem;
     margin-top: 0.5rem;
   }
