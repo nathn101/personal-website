@@ -9,7 +9,6 @@ import { height, width } from "@fortawesome/free-solid-svg-icons/faPen";
 const HomeV3 = () => {
   const canvasRef = useRef(null);
   const [activeSection, setActiveSection] = useState("projects");
-  const FORM_ID = process.env.REACT_APP_FORM_ID;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -454,7 +453,7 @@ const HomeV3 = () => {
   
           <div className="contact-card">
             <h3>Send a Message</h3>
-            <form className="contact-form" action={FORM_ID} method="POST">
+            <form className="contact-form" action="https://formspree.io/f/xqapdwqg" method="POST">
               <div className="form-group">
                 <input type="text" name="name"placeholder="Your Name" required />
               </div>
