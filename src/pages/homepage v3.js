@@ -151,26 +151,26 @@ const HomeV3 = () => {
         this.x += this.vx;
         this.y += this.vy;
 
-        let bounced = false;
-        let prevAngle = this.angle;
-
-        if (this.x < 0 || this.x > canvasWidth) {
-          this.vx *= -1;
-          bounced = true;
+        let teleported = false;
+        if (this.x < 0) {
+          this.x = canvasWidth;
+          teleported = true;
+        } else if (this.x > canvasWidth) {
+          this.x = 0;
+          teleported = true;
         }
-        if (this.y < 0 || this.y > canvasHeight) {
-          this.vy *= -1;
-          bounced = true;
+        if (this.y < 0) {
+          this.y = canvasHeight;
+          teleported = true;
+        } else if (this.y > canvasHeight) {
+          this.y = 0;
+          teleported = true;
         }
 
         this.angle = Math.atan2(this.vy, this.vx);
 
-        if (bounced) {
-          this.trail.push({ x: this.x, y: this.y, angle: prevAngle });
+        if (teleported) {
           this.lastTrailPoint = { x: this.x, y: this.y };
-          if (this.trail.length > this.maxTrailLength) {
-            this.trail.shift();
-          }
         }
 
         const distanceFromLastPoint = Math.sqrt(
@@ -182,7 +182,7 @@ const HomeV3 = () => {
           this.trail.push({ x: this.x, y: this.y, angle: this.angle });
           this.lastTrailPoint = { x: this.x, y: this.y };
           if (this.trail.length > this.maxTrailLength) {
-            this.trail.shift();
+        this.trail.shift();
           }
         }
       }

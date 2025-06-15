@@ -263,35 +263,33 @@ nav ul {
 
 @media (max-width: 800px) {
   .hero-container {
-    margin-top: 5rem;
     flex-direction: column;
     align-items: center;
-
+    margin: 2rem 0;
+    margin-top: 5rem;
     .hero {
       flex-direction: column;
       align-items: center;
       text-align: center;
-      margin-right: 0;
-      padding-left: 0;
       h1 {
         font-size: 4rem;
       }
 
       h2 {
-        font-size: 3rem; /* Scale down */
+        font-size: 3rem;
       }
 
       p {
-        font-size: 2rem; /* Scale down */
+        font-size: 2rem;
       }
     }
 
     .social-links {
-      flex-direction: row; /* Arrange social links horizontally */
+      flex-direction: row;
       gap: 1rem;
       margin-top: 2rem;
       a {
-        font-size: 1.25rem; /* Scale down */
+        font-size: 1.25rem;
       }
     }
   }
@@ -300,17 +298,16 @@ nav ul {
 @media (max-width: 600px) {
   .hero-container {
     .hero {
-      padding-left: 0;
       h1 {
-        font-size: 3rem; /* Further scale down */
+        font-size: 3rem;
       }
 
       h2 {
-        font-size: 2rem; /* Further scale down */
+        font-size: 2rem;
       }
 
       p {
-        font-size: 1.5rem; /* Further scale down */
+        font-size: 1.5rem;
       }
     }
 
@@ -318,7 +315,7 @@ nav ul {
       gap: 1rem;
       margin-top: 1rem;
       a {
-        font-size: 1rem; /* Further scale down */
+        font-size: 1rem;
       }
     }
   }
