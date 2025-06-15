@@ -210,24 +210,24 @@ nav ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex: 1; /* Allow hero section to take equal space */
+    flex: 1;
     margin-right: 2rem;
     padding-left: 5vw;
 
     h1 {
-      font-size: 5rem; /* Default size */
+      font-size: 5rem;
       margin-bottom: 10px;
       color: var(--text-color);
     }
 
     h2 {
-      font-size: 36px; /* Default size */
+      font-size: 3rem;
       margin-bottom: 20px;
       color: var(--accent-color);
     }
 
     p {
-      font-size: 18px; /* Default size */
+      font-size: 1.5rem;
       color: var(--text-color);
       width: 80%;
     }
@@ -264,25 +264,25 @@ nav ul {
 @media (max-width: 800px) {
   .hero-container {
     margin-top: 5rem;
-    flex-direction: column; /* Stack hero and social links vertically */
+    flex-direction: column;
     align-items: center;
 
     .hero {
       flex-direction: column;
       align-items: center;
-      text-align: center; /* Center-align text */
+      text-align: center;
       margin-right: 0;
       padding-left: 0;
       h1 {
-        font-size: 36px; /* Scale down */
+        font-size: 4rem;
       }
 
       h2 {
-        font-size: 28px; /* Scale down */
+        font-size: 3rem; /* Scale down */
       }
 
       p {
-        font-size: 16px; /* Scale down */
+        font-size: 2rem; /* Scale down */
       }
     }
 
@@ -302,15 +302,15 @@ nav ul {
     .hero {
       padding-left: 0;
       h1 {
-        font-size: 28px; /* Further scale down */
+        font-size: 3rem; /* Further scale down */
       }
 
       h2 {
-        font-size: 22px; /* Further scale down */
+        font-size: 2rem; /* Further scale down */
       }
 
       p {
-        font-size: 14px; /* Further scale down */
+        font-size: 1.5rem; /* Further scale down */
       }
     }
 
@@ -330,7 +330,7 @@ nav ul {
 }
 
 .section-header {
-    font-size: 36px;
+    font-size: 3rem;
     font-weight: 600;
     margin-bottom: 50px;
     padding-bottom: 10px;
@@ -346,6 +346,18 @@ nav ul {
         height: 3px;
         background-color: var(--accent-color);
     }
+}
+
+@media (max-width: 768px) {
+    .section-header {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+
+        &::after {
+            width: 70px;
+        }
+    }
+  
 }
 
 .projects-grid {

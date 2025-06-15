@@ -94,16 +94,17 @@ const HomeV3 = () => {
         ctx.save();
         ctx.translate(this.x, this.y);
         ctx.rotate(this.angle);
-        
-        ctx.beginPath();
-        ctx.fillstyle = "#00ffff";
-        ctx.ellipse(-this.size * 0.3, -this.size * 0.35, this.size * 0.4, this.size * 0.2, 35, 0, Math.PI * 2);
-        
-        ctx.fillStyle = "#00ffff";
-        ctx.ellipse(-this.size * 0.3, this.size * 0.35, this.size * 0.4, this.size * 0.2, -35, 0, Math.PI * 2);
 
+        ctx.beginPath();
+        ctx.fillStyle = "#00ffff";
+        ctx.ellipse(-this.size * 0.4, -this.size * 0.2, this.size * 0.3, this.size * 0.15, 35 * Math.PI / 180, 0, Math.PI * 2);
+        ctx.ellipse(-this.size * 0.4, this.size * 0.2, this.size * 0.3, this.size * 0.15, -35 * Math.PI / 180, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
         ctx.fillStyle = "#ffffff";
-        ctx.ellipse(0, 0, this.size * 0.8, this.size * 0.25, 0, 0, Math.PI * 2);
+        ctx.ellipse(0, 0, this.size * 0.6, this.size * 0.18, 0, 0, Math.PI * 2);
         ctx.fill();
         ctx.closePath();
 
@@ -231,7 +232,7 @@ const HomeV3 = () => {
     return (
       <div id="#" className="hero-container">
         <section className="hero">
-          <h1>Hi, I'm Nathan</h1>
+          <h1>Hey, I'm Nathan 👋</h1>
           <h2>
             <TypeAnimation 
               sequence={["a Software Developer", 2000, "an ML Engineer", 2000, "a Data Scientist", 2000]}
