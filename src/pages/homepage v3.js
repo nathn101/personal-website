@@ -17,7 +17,7 @@ const HomeV3 = () => {
     // const particleCount = 80;
     // const maxDistance = 100;
     const planes = [];
-    const planeCount = 20;
+    const planeCount = 10;
     const planeSpeed = 4; // Adjust this to control speed of planes
     const canvasWidth = window.innerWidth;
     const canvasHeight = window.innerHeight;
