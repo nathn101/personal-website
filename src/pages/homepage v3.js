@@ -13,14 +13,12 @@ const HomeV3 = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    // const particles = [];
-    // const particleCount = 80;
-    // const maxDistance = 100;
-    const planes = [];
+    let animationId;
+    let planes = [];
     const planeCount = 10;
     const planeSpeed = 4; // Adjust this to control speed of planes
-    const canvasWidth = window.innerWidth;
-    const canvasHeight = window.innerHeight;
+    let canvasWidth = window.innerWidth;
+    let canvasHeight = window.innerHeight;
 
     canvas.width = canvasWidth;
     canvas.height = canvasHeight;
@@ -142,7 +140,7 @@ const HomeV3 = () => {
       }
 
       update() {
-        const curveStrength = 0.1; // Increase for more curvature
+        const curveStrength = 0.1;
         const angleChange = (Math.random() - 0.5) * curveStrength;
         const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
         const currentAngle = Math.atan2(this.vy, this.vx);
@@ -171,7 +169,7 @@ const HomeV3 = () => {
           this.trail.push({ x: this.x, y: this.y, angle: prevAngle });
           this.lastTrailPoint = { x: this.x, y: this.y };
           if (this.trail.length > this.maxTrailLength) {
-        this.trail.shift();
+            this.trail.shift();
           }
         }
 
@@ -184,7 +182,7 @@ const HomeV3 = () => {
           this.trail.push({ x: this.x, y: this.y, angle: this.angle });
           this.lastTrailPoint = { x: this.x, y: this.y };
           if (this.trail.length > this.maxTrailLength) {
-        this.trail.shift();
+            this.trail.shift();
           }
         }
       }
@@ -193,38 +191,49 @@ const HomeV3 = () => {
         this.drawTrail();
         this.drawPlane();
       }
-
     }
 
-    for (let i = 0; i < planeCount; i++) {
-      planes.push(new Plane());
+    function setCanvasSize() {
+      canvasWidth = window.innerWidth;
+      canvasHeight = window.innerHeight;
+      canvas.width = canvasWidth;
+      canvas.height = canvasHeight;
     }
+
+    function createPlanes() {
+      planes = [];
+      for (let i = 0; i < planeCount; i++) {
+        planes.push(new Plane());
+      }
+    }
+
+    setCanvasSize();
+    createPlanes();
 
     let frameCount = 0;
-    const frameSkip = 3; // Adjust this to control speed (higher = slower)
-
-    const animate = () => {
-        if (frameCount % frameSkip === 0) {
-          ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-          // particles.forEach((particle) => {
-          //     particle.update();
-          //     particle.draw();
-          // });
-          // drawLines();
-          planes.forEach((plane) => {
-              plane.update();
-              plane.draw();
-          });
-        }
-        
-        frameCount++;
-        requestAnimationFrame(animate);
-    };
-
+    const frameSkip = 3;
+    function animate() {
+      animationId = requestAnimationFrame(animate);
+      if (frameCount % frameSkip === 0) {
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+        planes.forEach((plane) => {
+          plane.update();
+          plane.draw();
+        });
+      }
+      frameCount++;
+    }
     animate();
 
+    function handleResize() {
+      setCanvasSize();
+      createPlanes();
+    }
+    window.addEventListener('resize', handleResize);
+
     return () => {
-      cancelAnimationFrame(animate);
+      window.removeEventListener('resize', handleResize);
+      cancelAnimationFrame(animationId);
     };
   }, []);
 
