@@ -13,76 +13,207 @@ const HomeV3 = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    const particles = [];
-    const particleCount = 80;
-    const maxDistance = 100;
+    // const particles = [];
+    // const particleCount = 80;
+    // const maxDistance = 100;
+    const planes = [];
+    const planeCount = 20;
+    const planeSpeed = 4; // Adjust this to control speed of planes
     const canvasWidth = window.innerWidth;
     const canvasHeight = window.innerHeight;
 
     canvas.width = canvasWidth;
     canvas.height = canvasHeight;
 
-    class Particle {
+    // class Particle {
+    //   constructor() {
+    //     this.x = Math.random() * canvasWidth;
+    //     this.y = Math.random() * canvasHeight;
+    //     this.vx = (Math.random() - 0.5) * 2;
+    //     this.vy = (Math.random() - 0.5) * 2;
+    //     this.radius = 2;
+    //   }
+
+    //   draw() {
+    //     ctx.beginPath();
+    //     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    //     ctx.fillStyle = "#00ffff"; // Cyan color
+    //     ctx.fill();
+    //     ctx.closePath();
+    //   }
+
+    //   update() {
+    //     this.x += this.vx;
+    //     this.y += this.vy;
+
+    //     if (this.x < 0 || this.x > canvasWidth) this.vx *= -1;
+    //     if (this.y < 0 || this.y > canvasHeight) this.vy *= -1;
+    //   }
+    // }
+
+    // for (let i = 0; i < particleCount; i++) {
+    //   particles.push(new Particle());
+    // }
+
+    // const drawLines = () => {
+    //   for (let i = 0; i < particles.length; i++) {
+    //     for (let j = i + 1; j < particles.length; j++) {
+    //       const dx = particles[i].x - particles[j].x;
+    //       const dy = particles[i].y - particles[j].y;
+    //       const distance = Math.sqrt(dx * dx + dy * dy);
+
+    //       if (distance < maxDistance) {
+    //         ctx.beginPath();
+    //         ctx.moveTo(particles[i].x, particles[i].y);
+    //         ctx.lineTo(particles[j].x, particles[j].y);
+    //         ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / maxDistance})`; // Cyan lines with fading effect
+    //         ctx.lineWidth = 0.5;
+    //         ctx.stroke();
+    //         ctx.closePath();
+    //       }
+    //     }
+    //   }
+    // };
+
+    class Plane {
       constructor() {
         this.x = Math.random() * canvasWidth;
         this.y = Math.random() * canvasHeight;
-        this.vx = (Math.random() - 0.5) * 2;
-        this.vy = (Math.random() - 0.5) * 2;
-        this.radius = 2;
+        const angle = Math.random() * 2 * Math.PI;
+        this.vx = Math.cos(angle) * planeSpeed;
+        this.vy = Math.sin(angle) * planeSpeed;
+        this.size = 18;
+        this.angle = Math.atan2(this.vy, this.vx);
+        this.trail = [];
+        this.maxTrailLength = 15;
+        this.trailSpacing = 12;
+        this.lastTrailPoint = { x: this.x, y: this.y };
       }
 
-      draw() {
+      drawPlane() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.angle);
+        
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "#00ffff"; // Cyan color
+        ctx.fillstyle = "#00ffff";
+        ctx.ellipse(-this.size * 0.3, -this.size * 0.35, this.size * 0.4, this.size * 0.2, 35, 0, Math.PI * 2);
+        
+        ctx.fillStyle = "#00ffff";
+        ctx.ellipse(-this.size * 0.3, this.size * 0.35, this.size * 0.4, this.size * 0.2, -35, 0, Math.PI * 2);
+
+        ctx.fillStyle = "#ffffff";
+        ctx.ellipse(0, 0, this.size * 0.8, this.size * 0.25, 0, 0, Math.PI * 2);
         ctx.fill();
         ctx.closePath();
+
+        ctx.restore();
       }
 
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
+      drawTrail() {
+        if (this.trail.length < 1) return;
+        
+        ctx.font = "10px monospace";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        
+        const trailOffset = this.size * 0.7;
 
-        if (this.x < 0 || this.x > canvasWidth) this.vx *= -1;
-        if (this.y < 0 || this.y > canvasHeight) this.vy *= -1;
-      }
-    }
-
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
-    }
-
-    const drawLines = () => {
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < maxDistance) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / maxDistance})`; // Cyan lines with fading effect
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-            ctx.closePath();
+        for (let idx = this.trail.length - 1; idx >= 0; idx--) {
+          const i = this.trail.length - 4 - idx;
+          const opacity = ((idx + 1) / this.trail.length) * 0.7;
+          const base = this.trail[idx];
+          const coneWidth = (i / this.trail.length) * this.size * 1.2 + 2;
+          const digits = Math.floor(3 + (i / this.trail.length) * 2);
+          const angle = (base.angle !== undefined ? base.angle : this.angle) + Math.PI / 2;
+          const offsetX = base.x - Math.cos(base.angle !== undefined ? base.angle : this.angle) * trailOffset;
+          const offsetY = base.y - Math.sin(base.angle !== undefined ? base.angle : this.angle) * trailOffset;
+          for (let j = 0; j < digits; j++) {
+            const spread = coneWidth * (j / (digits - 1) - 0.5);
+            const randOffset = (Math.random() - 0.5) * coneWidth * 0.3;
+            const x = offsetX + Math.cos(angle) * (spread + randOffset);
+            const y = offsetY + Math.sin(angle) * (spread + randOffset);
+            const binary = Math.random() > 0.5 ? "1" : "0";
+            ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+            ctx.fillText(binary, x, y);
           }
         }
       }
-    };
+
+      update() {
+        const curveStrength = 0.1; // Increase for more curvature
+        const angleChange = (Math.random() - 0.5) * curveStrength;
+        const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+        const currentAngle = Math.atan2(this.vy, this.vx);
+        const newAngle = currentAngle + angleChange;
+        this.vx = Math.cos(newAngle) * speed;
+        this.vy = Math.sin(newAngle) * speed;
+
+        this.x += this.vx;
+        this.y += this.vy;
+
+        let bounced = false;
+        let prevAngle = this.angle;
+
+        if (this.x < 0 || this.x > canvasWidth) {
+          this.vx *= -1;
+          bounced = true;
+        }
+        if (this.y < 0 || this.y > canvasHeight) {
+          this.vy *= -1;
+          bounced = true;
+        }
+
+        this.angle = Math.atan2(this.vy, this.vx);
+
+        if (bounced) {
+          this.trail.push({ x: this.x, y: this.y, angle: prevAngle });
+          this.lastTrailPoint = { x: this.x, y: this.y };
+          if (this.trail.length > this.maxTrailLength) {
+        this.trail.shift();
+          }
+        }
+
+        const distanceFromLastPoint = Math.sqrt(
+          Math.pow(this.x - this.lastTrailPoint.x, 2) +
+          Math.pow(this.y - this.lastTrailPoint.y, 2)
+        );
+
+        if (distanceFromLastPoint >= this.trailSpacing) {
+          this.trail.push({ x: this.x, y: this.y, angle: this.angle });
+          this.lastTrailPoint = { x: this.x, y: this.y };
+          if (this.trail.length > this.maxTrailLength) {
+        this.trail.shift();
+          }
+        }
+      }
+
+      draw() {
+        this.drawTrail();
+        this.drawPlane();
+      }
+
+    }
+
+    for (let i = 0; i < planeCount; i++) {
+      planes.push(new Plane());
+    }
 
     let frameCount = 0;
-    const frameSkip = 2; // Adjust this to control speed (higher = slower)
+    const frameSkip = 3; // Adjust this to control speed (higher = slower)
 
     const animate = () => {
         if (frameCount % frameSkip === 0) {
-            ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-            particles.forEach((particle) => {
-                particle.update();
-                particle.draw();
-            });
-            drawLines();
+          ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+          // particles.forEach((particle) => {
+          //     particle.update();
+          //     particle.draw();
+          // });
+          // drawLines();
+          planes.forEach((plane) => {
+              plane.update();
+              plane.draw();
+          });
         }
         
         frameCount++;
@@ -494,7 +625,6 @@ const HomeV3 = () => {
         </a>
         <nav>
           <ul>
-            <li><a href="#">Home</a></li>
             <li><a href="#projects" onClick={() => setActiveSection("projects")}>Projects</a></li>
             <li><a href="#about" onClick={() => setActiveSection("about")}>About</a></li>
             <li><a href="#contact" onClick={() => setActiveSection("contact")}>Contact</a></li>
