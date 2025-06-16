@@ -394,10 +394,22 @@ const HomeV3 = () => {
             <div className="timeline-dot"></div>
             <div className="timeline-content">
               <div className="timeline-header">
-                <h4>Incoming Software Engineer Intern</h4>
+                <h4>Software Engineer</h4>
                 <span className="timeline-date">May 2025 - August 2025</span>
               </div>
               <div className="timeline-company">Jamlabs Data Science</div>
+              <div className="tech-tags">
+                <span className="tech-tag">AWS</span>
+                <span className="tech-tag">Terraform</span>
+                <span className="tech-tag">HTML</span>
+                <span className="tech-tag">CSS</span>
+                <span className="tech-tag">JavaScript</span>
+                <span className="tech-tag">Java</span>
+                <span className="tech-tag">React</span>
+              </div>
+              <p>
+              Developed a financial RAG chatbot application, focusing on cloud infrastructure using AWS and Terraform. Implemented responsive design with HTML, CSS, and JavaScript, enhancing user experience. Engineered automated workflows with Github Actions, improving deployment efficiency. Collaborated with a team of developers to deliver high-quality software solutions.     
+              </p>
             </div>
           </div>
 
@@ -447,104 +459,116 @@ const HomeV3 = () => {
   const AboutSection = () => {
     return (
       <section className="about" id="about">
-        <h2 className="section-header">About Me</h2>
-        <div className="about-grid">
-          <div className="about-card">
-            <h3>Background</h3>
-            <div className="tech-tags">
-              <span className="tech-tag">University of Waterloo</span>
-              <span className="tech-tag">Computer Science</span>
-              <span className="tech-tag">Finance</span>
-            </div>
-            <p>
-              I'm a passionate software developer with a strong foundation in computer science and finance. 
-              Currently studying at the University of Waterloo for Computing and Financial Management, I balance academic excellence with practical 
-              project development.
-            </p>
+      <h2 className="section-header">About Me</h2>
+      <div className="about-grid">
+        <div className="about-card">
+        <h3>Background</h3>
+        <div className="tech-tags">
+          <span className="tech-tag">University of Waterloo</span>
+          <span className="tech-tag">Computer Science</span>
+          <span className="tech-tag">Finance</span>
+        </div>
+        <p>
+          I'm a passionate software developer with a strong foundation in computer science and finance. 
+          Currently studying at the University of Waterloo for Computing and Financial Management, I balance academic excellence with practical 
+          project development.
+        </p>
+        </div>
+    
+        <div className="about-card">
+        <h3>Technical Skills</h3>
+        <div className="skills-container">
+          <div className="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" style={{height:'30px', width:'30px'}}/>
+          <span>Python</span>
           </div>
-  
-          <div className="about-card">
-            <h3>Technical Skills</h3>
-            <div className="skills-container">
-              <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" style={{height:'30px', width:'30px'}}/>
-                <span>Python</span>
-              </div>
-              <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" style={{height:'30px', width:'30px'}}/>
-                <span>C++</span>
-              </div>
-              <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" style={{height:'30px', width:'30px'}}/>
-                <span>C</span>
-              </div>
-              <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" style={{height:'30px', width:'30px'}}/>
-                <span>JavaScript</span>
-              </div>
-              <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" style={{height:'30px', width:'30px'}}/>
-                <span>React</span>
-              </div>
-              <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" style={{height:'30px', width:'30px'}}/>
-                <span>Next.js</span>
-              </div>
-              <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" style={{height:'30px', width:'30px'}}/>
-                <span>HTML5</span>
-              </div>
-              <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" style={{height:'30px', width:'30px'}}/>
-                <span>CSS3</span>
-              </div>
-              <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" style={{height:'30px', width:'30px'}}/>
-                <span>Tailwind</span>
-              </div>
-              <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" style={{height:'30px', width:'30px'}}/>
-                <span>Git</span>
-              </div>
-              <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" style={{height:'30px', width:'30px'}}/>
-                <span>Azure</span>
-              </div>
-              <div className="skill-item">  
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg" style={{height:'30px', width:'30px'}}/>
-                <span>Blender</span>
-              </div>
-            </div>
+          <div className="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" style={{height:'30px', width:'30px'}}/>
+          <span>C++</span>
           </div>
-  
-          <div className="about-card">
-            <h3>Experience</h3>
-            <div className="tech-tags">
-              <span className="tech-tag">Software Development</span>
-              <span className="tech-tag">Machine Learning</span>
-              <span className="tech-tag">Data Science</span>
-            </div>
-            <p>
-              My experience spans across multiple domains including machine learning, web development, 
-              and financial modeling. I'm particularly interested in AI applications and building 
-              data-driven solutions that solve real-world problems.
-            </p>
+          <div className="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" style={{height:'30px', width:'30px'}}/>
+          <span>C</span>
           </div>
-  
-          <div className="about-card">
-            <h3>Interests</h3>
-            <div className="tech-tags">
-              <span className="tech-tag">Financial Tech</span>
-              <span className="tech-tag">AI</span>
-            </div>
-            <p>
-              Beyond coding, I'm passionate about exploring the intersection of technology and finance. 
-              Outside of work and academics, I enjoy playing badminton, chess, listening to music and playing the guitar.
-            </p>
+          <div className="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" style={{height:'30px', width:'30px'}}/>
+          <span>JavaScript</span>
+          </div>
+          <div className="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" style={{height:'30px', width:'30px'}}/>
+          <span>React</span>
+          </div>
+          <div className="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" style={{height:'30px', width:'30px'}}/>
+          <span>Next.js</span>
+          </div>
+          <div className="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" style={{height:'30px', width:'30px'}}/>
+          <span>HTML5</span>
+          </div>
+          <div className="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" style={{height:'30px', width:'30px'}}/>
+          <span>CSS3</span>
+          </div>
+          <div className="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" style={{height:'30px', width:'30px'}}/>
+          <span>Tailwind</span>
+          </div>
+          <div className="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" style={{height:'30px', width:'30px'}}/>
+          <span>Git</span>
+          </div>
+          <div className="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" style={{height:'30px', width:'30px'}}/>
+          <span>Docker</span>
+          </div>
+          <div className="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" style={{height:'30px', width:'30px'}}/>
+            <span>Terraform</span>
+          </div>
+          <div className="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" style={{height:'30px', width:'30px'}}/>
+          <span>AWS</span>
+          </div>
+          <div className="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" style={{height:'30px', width:'30px'}}/>
+          <span>Azure</span>
+          </div>
+          <div className="skill-item">  
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg" style={{height:'30px', width:'30px'}}/>
+          <span>Blender</span>
           </div>
         </div>
+        </div>
+    
+        <div className="about-card">
+        <h3>Experience</h3>
+        <div className="tech-tags">
+          <span className="tech-tag">Software Development</span>
+          <span className="tech-tag">Machine Learning</span>
+          <span className="tech-tag">Data Science</span>
+        </div>
+        <p>
+          My experience spans across multiple domains including machine learning, web development, 
+          and financial modeling. I'm particularly interested in AI applications and building 
+          data-driven solutions that solve real-world problems.
+        </p>
+        </div>
+    
+        <div className="about-card">
+        <h3>Interests</h3>
+        <div className="tech-tags">
+          <span className="tech-tag">Financial Tech</span>
+          <span className="tech-tag">AI</span>
+        </div>
+        <p>
+          Beyond coding, I'm passionate about exploring the intersection of technology and finance. 
+          Outside of work and academics, I enjoy playing badminton, chess, listening to music and playing the guitar.
+        </p>
+        </div>
+      </div>
 
-        {WorkTimeline()}
+      {WorkTimeline()}
       </section>
     );
   };
