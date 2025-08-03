@@ -2,9 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import "./homepage v3.scss";
 import Logo from '../assets/logo/logo-no-bg.png';
 import { TypeAnimation } from 'react-type-animation';
-import { FaPython, FaHtml5, FaCss3Alt, FaReact, FaJs, FaGithub, FaLinkedin, FaFile, FaSpotify } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFile, FaSpotify } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
-import { height, width } from "@fortawesome/free-solid-svg-icons/faPen";
 
 const HomeV3 = () => {
   const canvasRef = useRef(null);
@@ -15,63 +14,49 @@ const HomeV3 = () => {
     const ctx = canvas.getContext("2d");
     let animationId;
     let planes = [];
+    let stars = [];
     const planeCount = 10;
-    const planeSpeed = 4; // Adjust this to control speed of planes
+    const planeSpeed = 4;
+    const starCount = 180;
     let canvasWidth = window.innerWidth;
     let canvasHeight = window.innerHeight;
 
-    canvas.width = canvasWidth;
-    canvas.height = canvasHeight;
-
-    // class Particle {
-    //   constructor() {
-    //     this.x = Math.random() * canvasWidth;
-    //     this.y = Math.random() * canvasHeight;
-    //     this.vx = (Math.random() - 0.5) * 2;
-    //     this.vy = (Math.random() - 0.5) * 2;
-    //     this.radius = 2;
-    //   }
-
-    //   draw() {
-    //     ctx.beginPath();
-    //     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    //     ctx.fillStyle = "#00ffff"; // Cyan color
-    //     ctx.fill();
-    //     ctx.closePath();
-    //   }
-
-    //   update() {
-    //     this.x += this.vx;
-    //     this.y += this.vy;
-
-    //     if (this.x < 0 || this.x > canvasWidth) this.vx *= -1;
-    //     if (this.y < 0 || this.y > canvasHeight) this.vy *= -1;
-    //   }
-    // }
-
-    // for (let i = 0; i < particleCount; i++) {
-    //   particles.push(new Particle());
-    // }
-
-    // const drawLines = () => {
-    //   for (let i = 0; i < particles.length; i++) {
-    //     for (let j = i + 1; j < particles.length; j++) {
-    //       const dx = particles[i].x - particles[j].x;
-    //       const dy = particles[i].y - particles[j].y;
-    //       const distance = Math.sqrt(dx * dx + dy * dy);
-
-    //       if (distance < maxDistance) {
-    //         ctx.beginPath();
-    //         ctx.moveTo(particles[i].x, particles[i].y);
-    //         ctx.lineTo(particles[j].x, particles[j].y);
-    //         ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / maxDistance})`; // Cyan lines with fading effect
-    //         ctx.lineWidth = 0.5;
-    //         ctx.stroke();
-    //         ctx.closePath();
-    //       }
-    //     }
-    //   }
-    // };
+    class Star {
+      constructor() {
+        this.x = Math.random() * canvasWidth;
+        this.y = Math.random() * canvasHeight;
+        this.radius = Math.random() * 1.2 + 0.3;
+        this.baseAlpha = Math.random() * 0.5 + 0.3;
+        this.alpha = this.baseAlpha;
+        this.twinkleSpeed = Math.random() * 0.02 + 0.01;
+        this.twinklePhase = Math.random() * Math.PI * 2;
+        this.color = Math.random() > 0.7 ? '#0ff7e8' : '#ffffff';
+        this.vx = (Math.random() - 0.5) * 0.03;
+        this.vy = (Math.random() - 0.5) * 0.03;
+      }
+      update() {
+        this.twinklePhase += this.twinkleSpeed;
+        this.alpha = this.baseAlpha + Math.sin(this.twinklePhase) * 0.3;
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0) this.x = canvasWidth;
+        if (this.x > canvasWidth) this.x = 0;
+        if (this.y < 0) this.y = canvasHeight;
+        if (this.y > canvasHeight) this.y = 0;
+      }
+      draw() {
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, Math.min(1, this.alpha));
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.shadowColor = this.color;
+        ctx.shadowBlur = 8;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+        ctx.restore();
+      }
+    }
 
     class Plane {
       constructor() {
@@ -206,16 +191,34 @@ const HomeV3 = () => {
         planes.push(new Plane());
       }
     }
+    function createStars() {
+      stars = [];
+      for (let i = 0; i < starCount; i++) {
+        stars.push(new Star());
+      }
+    }
 
     setCanvasSize();
     createPlanes();
+    createStars();
 
     let frameCount = 0;
     const frameSkip = 3;
     function animate() {
       animationId = requestAnimationFrame(animate);
       if (frameCount % frameSkip === 0) {
-        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+        // Draw background gradient
+        const gradient = ctx.createLinearGradient(0, 0, 0, canvasHeight);
+        gradient.addColorStop(0, '#101820');
+        gradient.addColorStop(1, '#1a2427');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+        // Draw stars
+        stars.forEach((star) => {
+          star.update();
+          star.draw();
+        });
+        // Draw planes
         planes.forEach((plane) => {
           plane.update();
           plane.draw();
@@ -228,6 +231,7 @@ const HomeV3 = () => {
     function handleResize() {
       setCanvasSize();
       createPlanes();
+      createStars();
     }
     window.addEventListener('resize', handleResize);
 
