@@ -1,4 +1,4 @@
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useRef, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, Stars, Text, Center, OrbitControls } from "@react-three/drei";
 import "./homepage.scss";
@@ -118,6 +118,14 @@ function AnimatedWorld() {
   const groupRef = useRef();
   const controlsRef = useRef();
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   useFrame(() => {
     if (!groupRef.current) return;
 
@@ -129,7 +137,7 @@ function AnimatedWorld() {
 
     // Scale transformation
     const baseScale = 1.4; // Zoomed in a bit more at top
-    const targetScale = baseScale + offset * 1.1; // Ends at 2.5
+    const targetScale = baseScale + offset * 0.8; // Ends at 2.5
     groupRef.current.scale.setScalar(targetScale);
 
     // Position Transformation
@@ -159,6 +167,7 @@ function AnimatedWorld() {
         ref={controlsRef}
         enableZoom={false}
         enablePan={false}
+        enableRotate={!isMobile}
         domElement={document.body}
       />
     </>
