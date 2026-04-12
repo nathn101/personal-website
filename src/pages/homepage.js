@@ -1,5 +1,4 @@
 import { Suspense, useRef, useState } from "react";
-import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, Stars, Text, Center, OrbitControls } from "@react-three/drei";
 import "./homepage.scss";
