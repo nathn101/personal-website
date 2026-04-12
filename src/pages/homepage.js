@@ -1,4 +1,4 @@
-import { Suspense, useRef, useEffect, useState } from "react";
+import { Suspense, useRef, useState } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, Stars, Text, Center, OrbitControls } from "@react-three/drei";
@@ -431,63 +431,63 @@ const Homepage = () => {
             <h3>Technical Skills</h3>
             <div className="skills-container">
               <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" style={{ height: '30px', width: '30px' }} />
+                <img alt="Python" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" style={{ height: '30px', width: '30px' }} />
                 <span>Python</span>
               </div>
               <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" style={{ height: '30px', width: '30px' }} />
+                <img alt="C++" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" style={{ height: '30px', width: '30px' }} />
                 <span>C++</span>
               </div>
               <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" style={{ height: '30px', width: '30px' }} />
+                <img alt="C" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" style={{ height: '30px', width: '30px' }} />
                 <span>C</span>
               </div>
               <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" style={{ height: '30px', width: '30px' }} />
+                <img alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" style={{ height: '30px', width: '30px' }} />
                 <span>JavaScript</span>
               </div>
               <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" style={{ height: '30px', width: '30px' }} />
+                <img alt="React" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" style={{ height: '30px', width: '30px' }} />
                 <span>React</span>
               </div>
               <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" style={{ height: '30px', width: '30px' }} />
+                <img alt="Next.js" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" style={{ height: '30px', width: '30px' }} />
                 <span>Next.js</span>
               </div>
               <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" style={{ height: '30px', width: '30px' }} />
+                <img alt="HTML5" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" style={{ height: '30px', width: '30px' }} />
                 <span>HTML5</span>
               </div>
               <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" style={{ height: '30px', width: '30px' }} />
+                <img alt="CSS3" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" style={{ height: '30px', width: '30px' }} />
                 <span>CSS3</span>
               </div>
               <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" style={{ height: '30px', width: '30px' }} />
+                <img alt="Tailwind" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" style={{ height: '30px', width: '30px' }} />
                 <span>Tailwind</span>
               </div>
               <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" style={{ height: '30px', width: '30px' }} />
+                <img alt="Git" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" style={{ height: '30px', width: '30px' }} />
                 <span>Git</span>
               </div>
               <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" style={{ height: '30px', width: '30px' }} />
+                <img alt="Docker" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" style={{ height: '30px', width: '30px' }} />
                 <span>Docker</span>
               </div>
               <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" style={{ height: '30px', width: '30px' }} />
+                <img alt="Terraform" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" style={{ height: '30px', width: '30px' }} />
                 <span>Terraform</span>
               </div>
               <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" style={{ height: '30px', width: '30px' }} />
+                <img alt="AWS" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" style={{ height: '30px', width: '30px' }} />
                 <span>AWS</span>
               </div>
               <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" style={{ height: '30px', width: '30px' }} />
+                <img alt="Azure" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" style={{ height: '30px', width: '30px' }} />
                 <span>Azure</span>
               </div>
               <div className="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg" style={{ height: '30px', width: '30px' }} />
+                <img alt="Blender" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg" style={{ height: '30px', width: '30px' }} />
                 <span>Blender</span>
               </div>
             </div>
@@ -617,7 +617,7 @@ const Homepage = () => {
       {/* HTML Overlay Content */}
       <div className="content-overlay" style={{ position: "relative", zIndex: 10 }}>
         <header className="navbar">
-          <a href="#" className="logo" onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}>
+          <a href="#top" className="logo-symbol" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
             <div className="logo-symbol"><img src={Logo} alt="NC"></img></div>
           </a>
           <nav>
