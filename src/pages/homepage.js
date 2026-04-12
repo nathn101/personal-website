@@ -163,13 +163,14 @@ function AnimatedWorld() {
         <OrbitingPlane radius={1.6} speed={0.6} angleOffset={Math.PI} color="#2035f0ff" tilt={[-Math.PI / 6, 0, -Math.PI / 8]} />
         <OrbitingPlane radius={1.4} speed={0.7} angleOffset={Math.PI} color="#20f0b5ff" tilt={[-Math.PI / 6, 0, -Math.PI / 8]} />
       </group>
-      <OrbitControls
-        ref={controlsRef}
-        enableZoom={false}
-        enablePan={false}
-        enableRotate={!isMobile}
-        domElement={document.body}
-      />
+      {!isMobile && (
+        <OrbitControls
+          ref={controlsRef}
+          enableZoom={false}
+          enablePan={false}
+          domElement={document.body}
+        />
+      )}
     </>
   );
 }
