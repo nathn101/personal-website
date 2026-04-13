@@ -161,7 +161,7 @@ function AnimatedWorld() {
         <EarthModel />
         <OrbitingPlane radius={1.5} speed={0.8} angleOffset={0} color="#0ff7e8" tilt={[Math.PI / 8, 0, Math.PI / 6]} />
         <OrbitingPlane radius={1.6} speed={0.6} angleOffset={Math.PI} color="#2035f0ff" tilt={[-Math.PI / 6, 0, -Math.PI / 8]} />
-        <OrbitingPlane radius={1.4} speed={0.7} angleOffset={Math.PI} color="#20f0b5ff" tilt={[-Math.PI / 6, 0, -Math.PI / 8]} />
+        <OrbitingPlane radius={1.4} speed={0.7} angleOffset={Math.PI * 0.5} color="#20f0b5ff" tilt={[Math.PI / 4, 0, -Math.PI / 6]} />
       </group>
       {!isMobile && (
         <OrbitControls
