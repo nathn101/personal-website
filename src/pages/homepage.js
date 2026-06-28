@@ -232,6 +232,22 @@ const Homepage = () => {
           {/* Project 1 */}
           <div className="project-card">
             <div className="project-content">
+              <h3>GestureFlow</h3>
+              <div className="tech-tags">
+                <span className="tech-tag">Python</span>
+                <span className="tech-tag">Computer Vision</span>
+                <span className="tech-tag">PyQt6</span>
+                <span className="tech-tag">MediaPipe</span>
+              </div>
+              <p>A real-time desktop gesture control overlay that uses MediaPipe and OpenCV to map hand movements to cursor actions, enabling hands-free clicking, scrolling, and pausing with visual PyQt6 feedback.</p>
+              <div className="project-links">
+                <a href="https://github.com/nathn101/Gesture-Interact-Overlay" target="_blank" rel="noopener noreferrer">Source Code</a>
+              </div>
+            </div>
+          </div>
+          {/* Project 2 */}
+          <div className="project-card">
+            <div className="project-content">
               <h3>Spotify Matchmaker</h3>
               <div className="tech-tags">
                 <span className="tech-tag">Python</span>
@@ -244,7 +260,7 @@ const Homepage = () => {
               </div>
             </div>
           </div>
-          {/* Project 2 */}
+          {/* Project 3 */}
           <div className="project-card">
             <div className="project-content">
               <h3>WOKE</h3>
@@ -260,7 +276,7 @@ const Homepage = () => {
               </div>
             </div>
           </div>
-          {/* Project 3 */}
+          {/* Project 4 */}
           <div className="project-card">
             <div className="project-content">
               <h3>Python Roboadvisor</h3>
@@ -275,7 +291,7 @@ const Homepage = () => {
               </div>
             </div>
           </div>
-          {/* Project 4 */}
+          {/* Project 5 */}
           <div className="project-card">
             <div className="project-content">
               <h3>Our ML Churney</h3>
@@ -291,7 +307,7 @@ const Homepage = () => {
               </div>
             </div>
           </div>
-          {/* Project 5 */}
+          {/* Project 6 */}
           <div className="project-card">
             <div className="project-content">
               <h3>Tag-Team</h3>
@@ -307,7 +323,7 @@ const Homepage = () => {
               </div>
             </div>
           </div>
-          {/* Project 6 */}
+          {/* Project 7 */}
           <div className="project-card">
             <div className="project-content">
               <h3>Chess</h3>
@@ -319,7 +335,7 @@ const Homepage = () => {
               <p>A chess game developed using C++ that incorporates object-oriented programming principles.</p>
             </div>
           </div>
-          {/* Project 7 */}
+          {/* Project 8 */}
           <div className="project-card">
             <div className="project-content">
               <h3>WLP4 Compiler and Assembler</h3>
@@ -331,7 +347,7 @@ const Homepage = () => {
               <p>A compiler and assembler for a custom assembly language, WLP4, developed in C. This project involved parsing, semantic analysis, and code generation.</p>
             </div>
           </div>
-          {/* Project 8 */}
+          {/* Project 9 */}
           <div className="project-card">
             <div className="project-content">
               <h3>Portfolio Website</h3>
@@ -353,6 +369,27 @@ const Homepage = () => {
       <div className="experience-timeline">
         <h3>Work Experience</h3>
         <div className="timeline">
+          <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <div className="timeline-content">
+              <div className="timeline-header">
+                <h4>Software Engineer</h4>
+                <span className="timeline-date">January 2026 - April 2026</span>
+              </div>
+              <div className="timeline-company">Boomerang</div>
+              <div className="tech-tags">
+                <span className="tech-tag">Kotlin</span>
+                <span classname="tech-tag">TypeScript</span>
+                <span classname="tech-tag">Vite</span>
+                <span className="tech-tag">Data Pipelines</span>
+                <span className="tech-tag">Data Ingestion</span>
+              </div>
+              <p>
+                Designed and deployed a scalable data ingestion pipeline in Kotlin to process applications and enable candidate attribution tracking. Architected an optimized deduplication pipeline that refactored core data processing logic to eliminate redundancy and improve processing speed. Standardized automated error-handling and data validation schemas to ensure high data availability and reliability.
+              </p>
+            </div>
+          </div>
+
           <div className="timeline-item">
             <div className="timeline-dot"></div>
             <div className="timeline-content">
