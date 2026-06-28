@@ -379,8 +379,8 @@ const Homepage = () => {
               <div className="timeline-company">Boomerang</div>
               <div className="tech-tags">
                 <span className="tech-tag">Kotlin</span>
-                <span classname="tech-tag">TypeScript</span>
-                <span classname="tech-tag">Vite</span>
+                <span className="tech-tag">TypeScript</span>
+                <span className="tech-tag">Vite</span>
                 <span className="tech-tag">Data Pipelines</span>
                 <span className="tech-tag">Data Ingestion</span>
               </div>
