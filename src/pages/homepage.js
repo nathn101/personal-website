@@ -248,13 +248,15 @@ const Homepage = () => {
           {/* Project 2 */}
           <div className="project-card">
             <div className="project-content">
-              <h3>Spotify Matchmaker</h3>
+              <h3>InSync</h3>
               <div className="tech-tags">
-                <span className="tech-tag">Python</span>
-                <span className="tech-tag">Machine Learning</span>
-                <span className="tech-tag">Web Dev</span>
+                <span className="tech-tag">React</span>
+                <span className="tech-tag">Node.js</span>
+                <span className="tech-tag">MongoDB</span>
+                <span className="tech-tag">Spotify API</span>
+                <span className="tech-tag">Ticketmaster API</span>
               </div>
-              <p>A matchmaking application that uses machine learning to match people based on their Spotify listening profiles</p>
+              <p>A modern, glassmorphic MERN-stack web application that matches music fans with local concert buddies by analyzing Spotify listening profiles and Ticketmaster events, featuring interactive RSVP status badges and real-time group chat rooms for collaborative ticket purchasing.</p>
               <div className="project-links">
                 <a href="https://github.com/nathn101/InSync" target="_blank" rel="noopener noreferrer">Source Code</a>
               </div>
