@@ -394,6 +394,26 @@ const Homepage = () => {
             <div className="timeline-content">
               <div className="timeline-header">
                 <h4>Software Engineer</h4>
+                <span className="timeline-date">May 2026 - August 2026</span>
+              </div>
+              <div className="timeline-company">Capital One</div>
+              <div className="tech-tags">
+                <span className="tech-tag">Go</span>
+                <span className="tech-tag">Database Architecture</span>
+                <span className="tech-tag">Testing Infrastructure</span>
+                <span className="tech-tag">Microservices</span>
+              </div>
+              <p>
+                Engineered a unified Database Abstraction Layer in Go for Capital One’s Quick Check service, standardizing data access patterns and eliminating redundant persistence logic across core components. Introduced a robust testing infrastructure to strengthen regression coverage and defect detection, while architecting a hackathon-winning Smart Ads prototype that accelerated campaign launches by over 60%.
+              </p>
+            </div>
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <div className="timeline-content">
+              <div className="timeline-header">
+                <h4>Software Engineer</h4>
                 <span className="timeline-date">January 2026 - April 2026</span>
               </div>
               <div className="timeline-company">Boomerang</div>
