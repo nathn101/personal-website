@@ -192,6 +192,24 @@ function Scene() {
 }
 
 const Homepage = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const aboutElement = document.getElementById('about');
+      if (aboutElement) {
+        const rect = aboutElement.getBoundingClientRect();
+        // Turn on glassmorphism when the About section reaches the top of the viewport (or navbar height)
+        setIsScrolled(rect.top <= 80);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Check initially on load
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const renderContent = () => {
     return (
       <div className="hero-container">
@@ -666,17 +684,45 @@ const Homepage = () => {
 
       {/* HTML Overlay Content */}
       <div className="content-overlay" style={{ position: "relative", zIndex: 10 }}>
-        <header className="navbar">
-          <a href="#top" className="logo-symbol" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-            <div className="logo-symbol"><img src={Logo} alt="NC"></img></div>
-          </a>
-          <nav>
-            <ul>
-              <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a></li>
-              <li><a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>Projects</a></li>
-              <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a></li>
-            </ul>
-          </nav>
+        {/* SVG Filter for Liquid Glass Distortion */}
+        <svg width="0" height="0" style={{ position: "absolute", pointerEvents: "none", zIndex: -1, opacity: 0 }}>
+          <defs>
+            <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%">
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.015 0.015"
+                numOctaves="2"
+                seed="92"
+                result="noise"
+              />
+              <feGaussianBlur in="noise" stdDeviation="3" result="blurred" />
+              <feDisplacementMap
+                in="SourceGraphic"
+                in2="blurred"
+                scale="18"
+                xChannelSelector="R"
+                yChannelSelector="G"
+              />
+            </filter>
+          </defs>
+        </svg>
+
+        <header className={`navbar liquidGlass-wrapper ${isScrolled ? 'scrolled' : ''}`}>
+          <div className="liquidGlass-effect"></div>
+          <div className="liquidGlass-tint"></div>
+
+          <div className="liquidGlass-content">
+            <a href="#top" className="logo-symbol" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+              <img src={Logo} alt="NC" />
+            </a>
+            <nav>
+              <ul>
+                <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a></li>
+                <li><a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>Projects</a></li>
+                <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a></li>
+              </ul>
+            </nav>
+          </div>
         </header>
 
         <div className="scroll-sections">
