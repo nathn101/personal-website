@@ -250,6 +250,24 @@ const Homepage = () => {
           {/* Project 1 */}
           <div className="project-card">
             <div className="project-content">
+              <h3>ScaleUp</h3>
+              <div className="tech-tags">
+                <span className="tech-tag">Next.js</span>
+                <span className="tech-tag">FastAPI</span>
+                <span className="tech-tag">Python</span>
+                <span className="tech-tag">MediaPipe</span>
+                <span className="tech-tag">Web Audio API</span>
+                <span className="tech-tag">ElevenLabs</span>
+              </div>
+              <p>An AI music tutor that listens while you play, watches how you hold the instrument, and tells you what to fix — in an examiner's voice, on the beat. Underneath it is a skill tree with spaced repetition: technique you stop practising decays, and decayed skills come back as daily quests. Anki's retention mechanics with a tech tree's dopamine loop, pointed at an instrument.</p>
+              <div className="project-links">
+                <a href="https://github.com/nathn101/ScaleUp" target="_blank" rel="noopener noreferrer">Source Code</a>
+              </div>
+            </div>
+          </div>
+          {/* Project 2 */}
+          <div className="project-card">
+            <div className="project-content">
               <h3>GestureFlow</h3>
               <div className="tech-tags">
                 <span className="tech-tag">Python</span>
@@ -263,7 +281,7 @@ const Homepage = () => {
               </div>
             </div>
           </div>
-          {/* Project 2 */}
+          {/* Project 3 */}
           <div className="project-card">
             <div className="project-content">
               <h3>InSync</h3>
@@ -280,7 +298,7 @@ const Homepage = () => {
               </div>
             </div>
           </div>
-          {/* Project 3 */}
+          {/* Project 4 */}
           <div className="project-card">
             <div className="project-content">
               <h3>WOKE</h3>
@@ -296,7 +314,7 @@ const Homepage = () => {
               </div>
             </div>
           </div>
-          {/* Project 4 */}
+          {/* Project 5 */}
           <div className="project-card">
             <div className="project-content">
               <h3>Python Roboadvisor</h3>
@@ -311,7 +329,7 @@ const Homepage = () => {
               </div>
             </div>
           </div>
-          {/* Project 5 */}
+          {/* Project 6 */}
           <div className="project-card">
             <div className="project-content">
               <h3>Our ML Churney</h3>
@@ -327,7 +345,7 @@ const Homepage = () => {
               </div>
             </div>
           </div>
-          {/* Project 6 */}
+          {/* Project 7 */}
           <div className="project-card">
             <div className="project-content">
               <h3>Tag-Team</h3>
@@ -343,7 +361,7 @@ const Homepage = () => {
               </div>
             </div>
           </div>
-          {/* Project 7 */}
+          {/* Project 8 */}
           <div className="project-card">
             <div className="project-content">
               <h3>Chess</h3>
@@ -355,7 +373,7 @@ const Homepage = () => {
               <p>A chess game developed using C++ that incorporates object-oriented programming principles.</p>
             </div>
           </div>
-          {/* Project 8 */}
+          {/* Project 9 */}
           <div className="project-card">
             <div className="project-content">
               <h3>WLP4 Compiler and Assembler</h3>
@@ -367,7 +385,7 @@ const Homepage = () => {
               <p>A compiler and assembler for a custom assembly language, WLP4, developed in C. This project involved parsing, semantic analysis, and code generation.</p>
             </div>
           </div>
-          {/* Project 9 */}
+          {/* Project 10 */}
           <div className="project-card">
             <div className="project-content">
               <h3>Portfolio Website</h3>
